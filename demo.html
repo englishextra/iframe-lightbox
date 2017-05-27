@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Iframe-Lightbox Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="./css/iframe-lightbox.css">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <h1 class="title">Iframe-Lightbox Demo</h1>
+                <p><big>Responsive JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 4 kb source code, with demo</big></p>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+
+                <aside>
+                    <h3>Setup</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+                </aside>
+
+                <article>
+                    <header>
+                        <h2><a href="https://www.youtube.com/watch?v=KK9bwTlAvgo" class="iframe-lightbox-link" data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=1" data-padding-bottom="56.25%">YouTube</a></h2>
+                        <pre><code>&lt;a href=&quot;https://www.youtube.com/watch?v=KK9bwTlAvgo&quot;
+class=&quot;iframe-lightbox-link&quot;
+data-src=&quot;https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=1&quot;
+data-padding-bottom=&quot;56.25%&quot;&gt;YouTube&lt;/a&gt;</code></pre>
+                    </header>
+                    <section>
+                        <h2><a href="https://vimeo.com/28629415" class="iframe-lightbox-link" data-src="https://player.vimeo.com/video/28629415?autoplay=true" data-padding-bottom="56.25%">Vimeo</a></h2>
+                        <pre><code>&lt;a href=&quot;https://vimeo.com/28629415&quot;
+class=&quot;iframe-lightbox-link&quot;
+data-src=&quot;https://player.vimeo.com/video/28629415?autoplay=true&quot;
+data-padding-bottom=&quot;56.25%&quot;&gt;Vimeo&lt;/a&gt;</code></pre>
+                    </section>
+                    <footer>
+                        <h2><a href="https://soundcloud.com/fatcat-demo/trixicles-and-the-other-one" class="iframe-lightbox-link" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" data-padding-bottom="166px">SoundCloud</a></h2>
+                        <pre><code>&lt;a href=&quot;https://soundcloud.com/fatcat-demo/trixicles-and-the-other-one&quot;
+class=&quot;iframe-lightbox-link&quot;
+data-src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true&quot;
+data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
+                    </footer>
+                </article>
+
+                <aside>
+                    <h3>Setup</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
+                </aside>
+
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3><a href="https://github.com/englishextra/iframe-lightbox">GitHub</a></h3>
+            </footer>
+        </div>
+
+        <script src="./js/iframe-lightbox.js"></script>
+
+        <script>
+[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
+  el.lightbox = new IframeLightbox(el);
+});
+        </script>
+
+    </body>
+</html>
