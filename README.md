@@ -9,11 +9,13 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 #### jsDelivr
 
 `https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.js` 
+
 `https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.css`
 
 #### unpkg
 
 `https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.min.js` 
+
 `https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.min.css`
 
 ### Install
