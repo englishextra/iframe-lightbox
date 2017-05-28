@@ -2,6 +2,13 @@
 
 Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 4 kb unminified source code, with demo
 
+[![NPM](https://nodei.co/npm/iframe-lightbox.png?downloads=true)](https://nodei.co/npm/iframe-lightbox/)
+
+[![npm](https://img.shields.io/npm/v/iframe-lightbox.svg)](https://github.com/englishextra/iframe-lightbox)
+[![Bower](https://img.shields.io/bower/v/iframe-lightbox.svg)](https://github.com/englishextra/iframe-lightbox)
+[![Build Status](https://travis-ci.org/englishextra/iframe-lightbox.svg?branch=master)](https://travis-ci.org/englishextra/iframe-lightbox)
+[![bitHound Overall Score](https://www.bithound.io/github/englishextra/iframe-lightbox/badges/score.svg)](https://www.bithound.io/github/englishextra/iframe-lightbox)
+
 [DEMO](https://fiddle.jshell.net/englishextra/8pzy6uhr/show/)
 
 ### CDN
@@ -67,7 +74,13 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
  data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
  data-padding-bottom="166px">SoundCloud</a>
  ```
-
+## Initialize
+```
+[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
+  el.lightbox = new IframeLightbox(el);
+});
+```
+ 
 ### GitHub
 
 Inspired by [squeral/lightbox](https://github.com/squeral/lightbox), and available under MIT License
