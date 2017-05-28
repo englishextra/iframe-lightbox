@@ -19,7 +19,7 @@
         <![endif]-->
 
                 <h1 class="title">Iframe-Lightbox Demo</h1>
-                <p>Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 4 kb unminified source code, with demo</p>
+                <p>Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 4 kb unminified source code, with demo</p>
 				
 				<p><a href="https://nodei.co/npm/iframe-lightbox/"><img src="https://camo.githubusercontent.com/4e8d842a445e98d70413ec0cdf2de3c4bbd2964d/68747470733a2f2f6e6f6465692e636f2f6e706d2f696672616d652d6c69676874626f782e706e673f646f776e6c6f6164733d74727565" alt="NPM" data-canonical-src="https://nodei.co/npm/iframe-lightbox.png?downloads=true" style="max-width:100%;"></a></p>
 				<p><a href="https://github.com/englishextra/iframe-lightbox"><img src="https://camo.githubusercontent.com/05e33067cdf8446de0efaaada0a614c26bfe8f70/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f696672616d652d6c69676874626f782e737667" alt="npm" data-canonical-src="https://img.shields.io/npm/v/iframe-lightbox.svg" style="max-width:100%;"></a>
@@ -27,7 +27,16 @@
 				<a href="https://travis-ci.org/englishextra/iframe-lightbox"><img src="https://camo.githubusercontent.com/68c5a2cebe394dc9020950242f0106e9861223c9/68747470733a2f2f7472617669732d63692e6f72672f656e676c69736865787472612f696672616d652d6c69676874626f782e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/englishextra/iframe-lightbox.svg?branch=master" style="max-width:100%;"></a>
 				<a href="https://www.bithound.io/github/englishextra/iframe-lightbox"><img src="https://camo.githubusercontent.com/ef4e8779904740cddf5fa696d274e465d54e7903/68747470733a2f2f7777772e626974686f756e642e696f2f6769746875622f656e676c69736865787472612f696672616d652d6c69676874626f782f6261646765732f73636f72652e737667" alt="bitHound Overall Score" data-canonical-src="https://www.bithound.io/github/englishextra/iframe-lightbox/badges/score.svg" style="max-width:100%;"></a></p>
 
-				<p><a href="https://fiddle.jshell.net/englishextra/8pzy6uhr/3/show/">DEMO</a></p>
+				<p><a href="https://fiddle.jshell.net/englishextra/8pzy6uhr/show/">DEMO</a></p>
+				
+				<h3>Features</h3>
+				<ul>
+					<li>Nicely fits YouTube / Vimeo / SoundCloud or other URL via iframe</li>
+					<li>Customizable aspect ratio via `data-padding-bottom` attribute</li>
+					<li>Debounced launch, default 500ms, custom rate can be set as second parameter</li>
+					<li>Preloading spinner that is unset after onload event succeeds</li>
+				</ul>
+
 				
                     <h3>CDN</h3>
 					<h4>jsDelivr</h4>
@@ -61,20 +70,20 @@
 					<p>So, for YouTube or Vimeo, <code>data-padding-bottom=&quot;56.25%&quot;</code> would be enough.</p>
 					<p>For SoundCloud embedded player via iframe, use: <code>data-padding-bottom=&quot;166px&quot;</code></p>
 
-                        <h2><a href="https://www.youtube.com/watch?v=KK9bwTlAvgo" class="iframe-lightbox-link" data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=1" data-padding-bottom="56.25%">YouTube</a></h2>
-                        <pre><code>&lt;a href=&quot;https://www.youtube.com/watch?v=KK9bwTlAvgo&quot;
+                        <h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=1" data-padding-bottom="56.25%">YouTube</a></h2>
+                        <pre><code>&lt;a href=&quot;javascript:void(0);&quot;
 class=&quot;iframe-lightbox-link&quot;
 data-src=&quot;https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=1&quot;
 data-padding-bottom=&quot;56.25%&quot;&gt;YouTube&lt;/a&gt;</code></pre>
 
-                        <h2><a href="https://vimeo.com/28629415" class="iframe-lightbox-link" data-src="https://player.vimeo.com/video/28629415?autoplay=true" data-padding-bottom="56.25%">Vimeo</a></h2>
-                        <pre><code>&lt;a href=&quot;https://vimeo.com/28629415&quot;
+                        <h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://player.vimeo.com/video/28629415?autoplay=true" data-padding-bottom="56.25%">Vimeo</a></h2>
+                        <pre><code>&lt;a href=&quot;javascript:void(0);&quot;
 class=&quot;iframe-lightbox-link&quot;
 data-src=&quot;https://player.vimeo.com/video/28629415?autoplay=true&quot;
 data-padding-bottom=&quot;56.25%&quot;&gt;Vimeo&lt;/a&gt;</code></pre>
 
-                        <h2><a href="https://soundcloud.com/fatcat-demo/trixicles-and-the-other-one" class="iframe-lightbox-link" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" data-padding-bottom="166px">SoundCloud</a></h2>
-                        <pre><code>&lt;a href=&quot;https://soundcloud.com/fatcat-demo/trixicles-and-the-other-one&quot;
+                        <h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" data-padding-bottom="166px">SoundCloud</a></h2>
+                        <pre><code>&lt;a href=&quot;javascript:void(0);&quot;
 class=&quot;iframe-lightbox-link&quot;
 data-src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true&quot;
 data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
@@ -83,6 +92,15 @@ data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
 						<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
 	el.lightbox = new IframeLightbox(el);
 });</code></pre>
+						<h2>Caveats</h2>
+						<p>SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:</p>
+						<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
+	if (!el.classList.contains("is-binded")) {
+		el.lightbox = new IframeLightbox(el);
+		el.classList.add("is-binded");
+	}
+});</code></pre>
+						<p>That way you avoid multiple assignments to a single element.</p>
 
                 <h3><a href="https://github.com/englishextra/iframe-lightbox">GitHub</a></h3>
 				<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a>, and available under MIT License</p>

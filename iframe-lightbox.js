@@ -3,6 +3,7 @@
  * @see {@link https://github.com/squeral/lightbox}
  * @see {@link https://github.com/squeral/lightbox/blob/master/lightbox.js}
  * @params {Object} elem Node element
+ * @params {Object} [rate] debounce rate, default 500ms
  * new IframeLightbox(elem)
  * passes jshint
  */
@@ -20,8 +21,9 @@
 	isLoadedClass = "is-loaded",
 	isOpenedClass = "is-opened",
 	isShowingClass = "is-showing";
-	var IframeLightbox = function (elem) {
+	var IframeLightbox = function (elem, rate) {
 		this.trigger = elem;
+		this.rate = rate || 500;
 		this.el = d[gEBCN](containerClass)[0] || "";
 		this.body = this.el ? this.el[gEBCN]("body")[0] : "";
 		this.content = this.el ? this.el[gEBCN]("content")[0] : "";
@@ -34,10 +36,35 @@
 		if (!this.el) {
 			this.create();
 		}
-		this.trigger[aEL]("click", function (e) {
+		var debounce = function (func, wait) {
+			var timeout,
+			args,
+			context,
+			timestamp;
+			return function () {
+				context = this;
+				args = [].slice.call(arguments, 0);
+				timestamp = new Date();
+				var later = function () {
+					var last = (new Date()) - timestamp;
+					if (last < wait) {
+						timeout = setTimeout(later, wait - last);
+					} else {
+						timeout = null;
+						func.apply(context, args);
+					}
+				};
+				if (!timeout) {
+					timeout = setTimeout(later, wait);
+				}
+			};
+		};
+		var handleOpenIframeLightbox = function (e) {
 			e.preventDefault();
 			_this.open();
-		});
+		};
+		var debounceHandleOpenIframeLightbox = debounce(handleOpenIframeLightbox, this.rate);
+		this.trigger[aEL]("click", debounceHandleOpenIframeLightbox);
 	};
 	IframeLightbox.prototype.create = function () {
 		var _this = this,

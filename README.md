@@ -11,6 +11,13 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 [DEMO](https://fiddle.jshell.net/englishextra/8pzy6uhr/show/)
 
+### Features
+
+* Nicely fits YouTube / Vimeo / SoundCloud or other URL via iframe
+* Customizable aspect ratio via `data-padding-bottom` attribute
+* Debounced launch, default 500ms, custom rate can be set as second parameter
+* Preloading spinner that is unset after onload event succeeds* 
+
 ### CDN
 
 #### jsDelivr
@@ -55,32 +62,48 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 
 ## YouTube
 ```
- <a href="https://www.youtube.com/watch?v=KK9bwTlAvgo"
+ <a href="javascript:void(0);"
  class="iframe-lightbox-link"
  data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=1"
  data-padding-bottom="56.25%">YouTube</a>
 ```
+
 ## Vimeo
 ```
- <a href="https://vimeo.com/28629415"
+ <a href="javascript:void(0);"
  class="iframe-lightbox-link"
  data-src="https://player.vimeo.com/video/28629415?autoplay=true"
  data-padding-bottom="56.25%">Vimeo</a>
 ```
+
 ## SoundCloud
 ```
- <a href="https://soundcloud.com/fatcat-demo/trixicles-and-the-other-one"
+ <a href="javascript:void(0);"
  class="iframe-lightbox-link"
  data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
  data-padding-bottom="166px">SoundCloud</a>
  ```
+ 
 ## Initialize
 ```
 [].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
   el.lightbox = new IframeLightbox(el);
 });
 ```
- 
+
+## Caveats
+
+SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
+
+```
+ [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
+   if (!el.classList.contains("is-binded")) {
+     el.lightbox = new IframeLightbox(el);
+     el.classList.add("is-binded");
+   }
+ });
+```
+
 ### GitHub
 
 Inspired by [squeral/lightbox](https://github.com/squeral/lightbox), and available under MIT License
