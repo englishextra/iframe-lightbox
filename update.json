@@ -1,0 +1,13 @@
+{
+  "packageManager": "github",
+  "name": "iframe-lightbox",
+  "repo": "englishextra/iframe-lightbox",
+  "files": {
+    "basePath": "",
+    "include": ["iframe-lightbox.js",
+    "iframe-lightbox.min.js",
+	"iframe-lightbox.css",
+    "iframe-lightbox.min.css"],
+    "exclude": []
+  }
+}

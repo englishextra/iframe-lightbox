@@ -1,6 +1,6 @@
 # Iframe-Lightbox Demo
 
-Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 4 kb source code, with demo
+Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 4 kb unminified source code, with demo
 
 [DEMO](https://fiddle.jshell.net/englishextra/8pzy6uhr/show/)
 
