@@ -27,13 +27,13 @@
 		this.content = this.el ? this.el[gEBCN]("content")[0] : "";
 		this.href = elem[dS].src || "";
 		this.paddingBottom = elem[dS].paddingBottom || "";
-
 		this.init();
 	};
 	IframeLightbox.prototype.init = function () {
 		var _this = this;
-		if (!this.el)
+		if (!this.el) {
 			this.create();
+		}
 		this.trigger[aEL]("click", function (e) {
 			e.preventDefault();
 			_this.open();
@@ -59,22 +59,22 @@
 		bd[aEL]("click", function () {
 			_this.close();
 		});
-		var f = function (e) {
-			if (_this.isOpen())
+		var clearBody = function (e) {
+			if (_this.isOpen()) {
 				return;
+			}
 			_this.el[cL].remove(isShowingClass);
 			_this.body.innerHTML = "";
 		};
-		this.el[aEL]("transitionend", f, false);
-		this.el[aEL]("webkitTransitionEnd", f, false);
-		this.el[aEL]("mozTransitionEnd", f, false);
-		this.el[aEL]("msTransitionEnd", f, false);
+		this.el[aEL]("transitionend", clearBody, false);
+		this.el[aEL]("webkitTransitionEnd", clearBody, false);
+		this.el[aEL]("mozTransitionEnd", clearBody, false);
+		this.el[aEL]("msTransitionEnd", clearBody, false);
 	};
 	IframeLightbox.prototype.loadIframe = function () {
 		this.iframeId = containerClass + Date.now();
 		this.body.innerHTML = '<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" scrolling="no" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>';
-
-		(function(iframeId, body){
+		(function (iframeId, body) {
 			d[gEBI](iframeId).onload = function () {
 				this.style.opacity = 1;
 				body[cL].add(isLoadedClass);
