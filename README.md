@@ -4,6 +4,28 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 [DEMO](https://fiddle.jshell.net/englishextra/8pzy6uhr/show/)
 
+### CDN
+
+#### jsDelivr
+
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.js` 
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.css`
+
+#### unpkg
+
+`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.min.js` 
+`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.min.css`
+
+### Install
+
+#### npm
+
+`npm install iframe-lightbox`
+
+#### bower
+
+`bower install iframe-lightbox`
+
 ### Setup
 
 `class` is not required. They are used here to select elements. You may use some other method for elements selection.
