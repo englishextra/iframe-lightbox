@@ -1,7 +1,7 @@
 {
   "name": "iframe-lightbox",
-  "version": "0.1.0",
-  "description": "QR code generating with vanilla js (SVG Element, Data URI SVG String, Data URI PNG String, HTML Table Element).",
+  "version": "0.1.1",
+  "description": "Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 4 kb unminified source code, with demo",
   "keywords": ["iframe-lightbox",
   "qr",
   "qrcode",
