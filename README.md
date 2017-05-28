@@ -14,9 +14,9 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 #### unpkg
 
-`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.min.js` 
+`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.js` 
 
-`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.min.css`
+`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.css`
 
 ### Install
 
