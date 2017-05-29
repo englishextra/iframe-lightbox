@@ -16,7 +16,7 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 * Nicely fits YouTube / Vimeo / SoundCloud or other URL via iframe
 * Customizable aspect ratio via `data-padding-bottom` attribute
 * Debounced launch, default 500ms, custom rate can be set as second parameter
-* Preloading spinner that is unset after onload event succeeds* 
+* Preloading spinner that is unset after onload event succeeds
 
 ### CDN
 
@@ -103,6 +103,8 @@ SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
    }
  });
 ```
+
+That way you avoid multiple assignments to a single element.
 
 ### GitHub
 
