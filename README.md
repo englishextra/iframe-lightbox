@@ -10,6 +10,8 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 [![bitHound Overall Score](https://www.bithound.io/github/englishextra/iframe-lightbox/badges/score.svg)](https://www.bithound.io/github/englishextra/iframe-lightbox)
 
 [DEMO](https://fiddle.jshell.net/englishextra/8pzy6uhr/show/)
+[DEMO (ALT)](https://output.jsbin.com/saqine)
+[DEMO (ALT)](https://codepen.io/englishextra/full/jmjayV/)
 
 ### Features
 
@@ -64,7 +66,7 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 ```
  <a href="javascript:void(0);"
  class="iframe-lightbox-link"
- data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=1"
+ data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0"
  data-padding-bottom="56.25%">YouTube</a>
 ```
 
@@ -72,7 +74,7 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 ```
  <a href="javascript:void(0);"
  class="iframe-lightbox-link"
- data-src="https://player.vimeo.com/video/28629415?autoplay=true"
+ data-src="https://player.vimeo.com/video/28629415?autoplay=false"
  data-padding-bottom="56.25%">Vimeo</a>
 ```
 
