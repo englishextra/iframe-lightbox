@@ -9,9 +9,13 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 [![Build Status](https://travis-ci.org/englishextra/iframe-lightbox.svg?branch=master)](https://travis-ci.org/englishextra/iframe-lightbox)
 [![bitHound Overall Score](https://www.bithound.io/github/englishextra/iframe-lightbox/badges/score.svg)](https://www.bithound.io/github/englishextra/iframe-lightbox)
 
-[DEMO](https://fiddle.jshell.net/englishextra/8pzy6uhr/show/)
-[DEMO (ALT)](https://output.jsbin.com/saqine)
-[DEMO (ALT)](https://codepen.io/englishextra/full/jmjayV/)
+### Demo
+
+[jsfiddle](https://fiddle.jshell.net/englishextra/8pzy6uhr/show/)
+
+[jsbin](https://output.jsbin.com/saqine)
+
+[codepen](https://codepen.io/englishextra/full/jmjayV/)
 
 ### Features
 
@@ -24,13 +28,13 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 #### jsDelivr
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.js` 
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.js`
 
 `https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.css`
 
 #### unpkg
 
-`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.js` 
+`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.js`
 
 `https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.css`
 
@@ -85,7 +89,7 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
  data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
  data-padding-bottom="166px">SoundCloud</a>
  ```
- 
+
 ## Initialize
 ```
 [].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
