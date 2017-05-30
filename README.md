@@ -93,7 +93,7 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 });
 ```
 
-## Caveats
+## Tips
 
 SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
 
