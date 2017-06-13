@@ -22,14 +22,18 @@
 	isOpenedClass = "is-opened",
 	isShowingClass = "is-showing";
 	var IframeLightbox = function (elem, rate) {
-		this.trigger = elem;
-		this.rate = rate || 500;
-		this.el = d[gEBCN](containerClass)[0] || "";
-		this.body = this.el ? this.el[gEBCN]("body")[0] : "";
-		this.content = this.el ? this.el[gEBCN]("content")[0] : "";
-		this.href = elem[dS].src || "";
-		this.paddingBottom = elem[dS].paddingBottom || "";
-		this.init();
+		if (elem.nodeName) {
+			this.trigger = elem;
+			this.rate = rate || 500;
+			this.el = d[gEBCN](containerClass)[0] || "";
+			this.body = this.el ? this.el[gEBCN]("body")[0] : "";
+			this.content = this.el ? this.el[gEBCN]("content")[0] : "";
+			this.href = elem[dS].src || "";
+			this.paddingBottom = elem[dS].paddingBottom || "";
+			this.init();
+		} else {
+			return;
+		}
 	};
 	IframeLightbox.prototype.init = function () {
 		var _this = this;
@@ -78,10 +82,10 @@
 		this.body[cL].add("body");
 		this.el[aC](bd);
 		this.content[aC](this.body);
-		this.content_holder = d[cE]("div");
-		this.content_holder[cL].add("content-holder");
-		this.content_holder[aC](this.content);
-		this.el[aC](this.content_holder);
+		this.contentHolder = d[cE]("div");
+		this.contentHolder[cL].add("content-holder");
+		this.contentHolder[aC](this.content);
+		this.el[aC](this.contentHolder);
 		d.body[aC](this.el);
 		bd[aEL]("click", function () {
 			_this.close();
@@ -106,7 +110,7 @@
 				this.style.opacity = 1;
 				body[cL].add(isLoadedClass);
 			};
-		})(this.iframeId, this.body);
+		}(this.iframeId, this.body));
 	};
 	IframeLightbox.prototype.open = function () {
 		this.loadIframe();
@@ -126,4 +130,4 @@
 		return this.el[cL].contains(isOpenedClass);
 	};
 	root.IframeLightbox = IframeLightbox;
-})("undefined" !== typeof window ? window : this);
+}("undefined" !== typeof window ? window : this));
