@@ -26,13 +26,8 @@
 			this.trigger = elem;
 			this.rate = rate || 500;
 			this.el = d[gEBCN](containerClass)[0] || "";
-			if (this.el) {
-				this.body = this.el[gEBCN]("body")[0] || "";
-				this.content = this.el[gEBCN]("content")[0] || "";
-			} else {
-				this.body = "";
-				this.content = "";
-			}
+			this.body = this.el ? this.el[gEBCN]("body")[0] : "";
+			this.content = this.el ? this.el[gEBCN]("content")[0] : "";
 			this.href = elem[dS].src || "";
 			this.paddingBottom = elem[dS].paddingBottom || "";
 			this.init();
