@@ -16,7 +16,7 @@
 	cE = "createElement",
 	cL = "classList",
 	aC = "appendChild",
-	dS = "dataset",
+	ds = "dataset",
 	containerClass = "iframe-lightbox",
 	isLoadedClass = "is-loaded",
 	isOpenedClass = "is-opened",
@@ -28,8 +28,8 @@
 			this.el = d[gEBCN](containerClass)[0] || "";
 			this.body = this.el ? this.el[gEBCN]("body")[0] : "";
 			this.content = this.el ? this.el[gEBCN]("content")[0] : "";
-			this.href = elem[dS].src || "";
-			this.paddingBottom = elem[dS].paddingBottom || "";
+			this.href = elem[ds].src || "";
+			this.paddingBottom = elem[ds].paddingBottom || "";
 			this.init();
 		} else {
 			return;
