@@ -110,6 +110,7 @@ SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
    }
  });
  ```
+ That way you avoid multiple assignments to a single element.
 
 **Examples of event handling**
 
@@ -129,7 +130,6 @@ SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
 });
 ```
 
-That way you avoid multiple assignments to a single element.
 
 ### GitHub
 
