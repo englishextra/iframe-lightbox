@@ -102,16 +102,34 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 
 SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
 
-```
+```javascript
  [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
    if (!el.classList.contains("is-binded")) {
      el.lightbox = new IframeLightbox(el);
      el.classList.add("is-binded");
    }
  });
+ ```
+ That way you avoid multiple assignments to a single element.
+
+**Examples of event handling**
+
+ ```javascript
+ [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
+    el.lightbox = new IframeLightbox(el, {
+        onIframeLoaded: function(iframe) {
+            console.log('hola', iframe);
+        },
+        onCreated: function(instance) {
+            console.log('margo', instance)
+        },
+        onOpened: function(instance) {
+            console.log('blah', instance)
+        }
+    });
+});
 ```
 
-That way you avoid multiple assignments to a single element.
 
 ### GitHub
 
