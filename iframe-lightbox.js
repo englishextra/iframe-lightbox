@@ -16,24 +16,26 @@
 	cE = "createElement",
 	cL = "classList",
 	aC = "appendChild",
-	ds = "dataset",
+	dS = "dataset",
 	containerClass = "iframe-lightbox",
 	isLoadedClass = "is-loaded",
 	isOpenedClass = "is-opened",
 	isShowingClass = "is-showing";
-	var IframeLightbox = function (elem, rate) {
-		if (elem.nodeName) {
-			this.trigger = elem;
-			this.rate = rate || 500;
-			this.el = d[gEBCN](containerClass)[0] || "";
-			this.body = this.el ? this.el[gEBCN]("body")[0] : "";
-			this.content = this.el ? this.el[gEBCN]("content")[0] : "";
-			this.href = elem[ds].src || "";
-			this.paddingBottom = elem[ds].paddingBottom || "";
-			this.init();
-		} else {
-			return;
-		}
+	var IframeLightbox = function (elem, options) {
+		var options = options || {};
+		this.trigger = elem;
+		this.rate = options.rate || 500;
+		this.el = d[gEBCN](containerClass)[0] || "";
+		this.body = this.el ? this.el[gEBCN]("body")[0] : "";
+		this.content = this.el ? this.el[gEBCN]("content")[0] : "";
+		this.href = elem[dS].src || "";
+		this.paddingBottom = elem[dS].paddingBottom || "";
+
+		//Event handlers
+		this.onOpened = options.onOpened;
+		this.onIframeLoaded = options.onIframeLoaded;
+		this.onCreated = options.onCreated;
+		this.init();
 	};
 	IframeLightbox.prototype.init = function () {
 		var _this = this;
@@ -82,10 +84,10 @@
 		this.body[cL].add("body");
 		this.el[aC](bd);
 		this.content[aC](this.body);
-		this.contentHolder = d[cE]("div");
-		this.contentHolder[cL].add("content-holder");
-		this.contentHolder[aC](this.content);
-		this.el[aC](this.contentHolder);
+		this.content_holder = d[cE]("div");
+		this.content_holder[cL].add("content-holder");
+		this.content_holder[aC](this.content);
+		this.el[aC](this.content_holder);
 		d.body[aC](this.el);
 		bd[aEL]("click", function () {
 			_this.close();
@@ -101,16 +103,19 @@
 		this.el[aEL]("webkitTransitionEnd", clearBody, false);
 		this.el[aEL]("mozTransitionEnd", clearBody, false);
 		this.el[aEL]("msTransitionEnd", clearBody, false);
+		this.callCallback(this.onCreated, this);
 	};
 	IframeLightbox.prototype.loadIframe = function () {
+		var _this = this;
 		this.iframeId = containerClass + Date.now();
-		this.body.innerHTML = '<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" scrolling="no" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" frameborder="no" title="Embedded Content"></iframe>';
+		this.body.innerHTML = '<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" scrolling="no" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>';
 		(function (iframeId, body) {
 			d[gEBI](iframeId).onload = function () {
 				this.style.opacity = 1;
 				body[cL].add(isLoadedClass);
+				_this.callCallback(_this.onIframeLoaded, _this);
 			};
-		}(this.iframeId, this.body));
+		})(this.iframeId, this.body);
 	};
 	IframeLightbox.prototype.open = function () {
 		this.loadIframe();
@@ -121,6 +126,7 @@
 		}
 		this.el[cL].add(isShowingClass);
 		this.el[cL].add(isOpenedClass);
+		this.callCallback(this.onOpened, this);
 	};
 	IframeLightbox.prototype.close = function () {
 		this.el[cL].remove(isOpenedClass);
@@ -129,5 +135,12 @@
 	IframeLightbox.prototype.isOpen = function () {
 		return this.el[cL].contains(isOpenedClass);
 	};
+	IframeLightbox.prototype.callCallback = function(func, data) {
+		if (typeof func !== 'function') {
+			return;
+		}
+		var caller = func.bind(this);
+		caller(data);
+	}
 	root.IframeLightbox = IframeLightbox;
-}("undefined" !== typeof window ? window : this));
+})("undefined" !== typeof window ? window : this);
