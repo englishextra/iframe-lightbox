@@ -21,8 +21,8 @@
 	isLoadedClass = "is-loaded",
 	isOpenedClass = "is-opened",
 	isShowingClass = "is-showing";
-	var IframeLightbox = function (elem, options) {
-		var options = options || {};
+	var IframeLightbox = function (elem, settings) {
+		var options = settings || {};
 		this.trigger = elem;
 		this.rate = options.rate || 500;
 		this.el = d[gEBCN](containerClass)[0] || "";
@@ -141,6 +141,6 @@
 		}
 		var caller = func.bind(this);
 		caller(data);
-	}
+	};
 	root.IframeLightbox = IframeLightbox;
 })("undefined" !== typeof window ? window : this);
