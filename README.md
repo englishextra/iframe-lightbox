@@ -93,7 +93,7 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 
 ## Initialize
 ```
-[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
+[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
   el.lightbox = new IframeLightbox(el);
 });
 ```
