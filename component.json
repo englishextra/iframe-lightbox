@@ -1,9 +1,9 @@
 {
-  "name": "iframe-lightbox",
-  "repo": "englishextra/iframe-lightbox",
-  "version": "0.1.4",
-  "scripts": ["iframe-lightbox.js"],
-  "styles": ["iframe-lightbox.css"],
-  "author": "englishextra",
-  "license": "(MIT)"
+	"name": "iframe-lightbox",
+	"repo": "englishextra/iframe-lightbox",
+	"version": "0.1.4",
+	"scripts": ["iframe-lightbox.js"],
+	"styles": ["iframe-lightbox.css"],
+	"author": "englishextra",
+	"license": "(MIT)"
 }

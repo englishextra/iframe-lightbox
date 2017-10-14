@@ -1,63 +1,63 @@
 {
-  "name": "iframe-lightbox",
-  "version": "0.1.4",
-  "description": "Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 4 kb unminified source code, with demo",
-  "keywords": ["lightbox",
-  "vanilla-javascript",
-  "vanilla-js",
-  "css",
-  "js",
-  "html",
-  "front-end",
-  "frontend",
-  "pwa",
-  "webapp",
-  "website",
-  "ui",
-  "browser",
-  "iframe",
-  "no-jquery",
-  "no-dependencies",
-  "no-framework",
-  "youtube",
-  "vimeo",
-  "soundcloud"],
-  "files": ["iframe-lightbox.js",
-  "iframe-lightbox.css"],
-  "main": "iframe-lightbox.js",
-  "filename": "iframe-lightbox.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/englishextra/iframe-lightbox.git"
-  },
-  "autoupdate": {
-    "source": "git",
-    "target": "git://github.com/englishextra/iframe-lightbox.git",
-    "fileMap": [{
-      "basePath": "",
-      "files": ["qrjs*"]
-    }]
-  },
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "jshint": "^2.9.4"
-  },
-  "scripts": {
-    "test": "grunt --verbose"
-  },
-  "email": "englishextra@mail.ru",
-  "url": "https://github.com/englishextra/qrjs/issues",
-  "homepage": "https://github.com/englishextra/iframe-lightbox",
-  "maintainers": {
-    "name": "Serguei Shimansky",
-    "email": "englishextra@mail.ru",
-    "url": "https://github.com/englishextra"
-  },
-  "author": {
-    "name": "englishextra",
-    "email": "englishextra@mail.ru",
-    "url": "https://github.com/englishextra"
-  },
-  "license": "(MIT)"
+	"name": "iframe-lightbox",
+	"version": "0.1.4",
+	"description": "Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 4 kb unminified source code, with demo",
+	"keywords": ["lightbox",
+	"vanilla-javascript",
+	"vanilla-js",
+	"css",
+	"js",
+	"html",
+	"front-end",
+	"frontend",
+	"pwa",
+	"webapp",
+	"website",
+	"ui",
+	"browser",
+	"iframe",
+	"no-jquery",
+	"no-dependencies",
+	"no-framework",
+	"youtube",
+	"vimeo",
+	"soundcloud"],
+	"files": ["iframe-lightbox.js",
+	"iframe-lightbox.css"],
+	"main": "iframe-lightbox.js",
+	"filename": "iframe-lightbox.js",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/englishextra/iframe-lightbox.git"
+	},
+	"autoupdate": {
+		"source": "git",
+		"target": "git://github.com/englishextra/iframe-lightbox.git",
+		"fileMap": [{
+			"basePath": "",
+			"files": ["qrjs*"]
+		}]
+	},
+	"devDependencies": {
+		"grunt": "^1.0.1",
+		"grunt-contrib-jshint": "^1.1.0",
+		"jshint": "^2.9.4"
+	},
+	"scripts": {
+		"test": "grunt --verbose"
+	},
+	"email": "englishextra@mail.ru",
+	"url": "https://github.com/englishextra/qrjs/issues",
+	"homepage": "https://github.com/englishextra/iframe-lightbox",
+	"maintainers": {
+		"name": "Serguei Shimansky",
+		"email": "englishextra@mail.ru",
+		"url": "https://github.com/englishextra"
+	},
+	"author": {
+		"name": "englishextra",
+		"email": "englishextra@mail.ru",
+		"url": "https://github.com/englishextra"
+	},
+	"license": "(MIT)"
 }

@@ -12,11 +12,11 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 ### Demo
 
+[codepen](https://codepen.io/englishextra/full/jmjayV/)
+
 [jsfiddle](https://fiddle.jshell.net/englishextra/8pzy6uhr/show/)
 
 [jsbin](https://output.jsbin.com/saqine)
-
-[codepen](https://codepen.io/englishextra/full/jmjayV/)
 
 ### Features
 
@@ -129,7 +129,6 @@ SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
     });
 });
 ```
-
 
 ### GitHub
 
