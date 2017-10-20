@@ -94,6 +94,20 @@ data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
 	}
 });</code></pre>
 	<p>That way you avoid multiple assignments to a single element.</p>
+	<h2>Examples of event handling</h2>
+	<pre>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
+   el.lightbox = new IframeLightbox(el, {
+	   onIframeLoaded: function(iframe) {
+		   console.log(&quot;hola&quot;, iframe);
+	   },
+	   onCreated: function(instance) {
+		   console.log(&quot;margo&quot;, instance)
+	   },
+	   onOpened: function(instance) {
+		   console.log(&quot;blah&quot;, instance)
+	   }
+   });
+});</pre>
 	<h3><a href="https://github.com/englishextra/iframe-lightbox">GitHub</a></h3>
 	<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a>, and available under MIT License</p>
 	<script src="./iframe-lightbox.js"></script>
