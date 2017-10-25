@@ -42,10 +42,10 @@
 			this.create();
 		}
 		var debounce = function (func, wait) {
-			var timeout,
-			args,
-			context,
-			timestamp;
+			var timeout;
+			var args;
+			var context;
+			var timestamp;
 			return function () {
 				context = this;
 				args = [].slice.call(arguments, 0);
