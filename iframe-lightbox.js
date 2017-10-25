@@ -7,33 +7,32 @@
  * new IframeLightbox(elem)
  * passes jshint
  */
-(function (root) {
+(function (root, document) {
 	"use strict";
-	var d = document,
-	aEL = "addEventListener",
-	gEBI = "getElementById",
-	gEBCN = "getElementsByClassName",
-	cE = "createElement",
-	cL = "classList",
-	aC = "appendChild",
-	dS = "dataset",
-	containerClass = "iframe-lightbox",
-	isLoadedClass = "is-loaded",
-	isOpenedClass = "is-opened",
-	isShowingClass = "is-showing";
+	var addEventListener = "addEventListener";
+	var getElementById = "getElementById";
+	var getElementsByClassName = "getElementsByClassName";
+	var createElement = "createElement";
+	var classList = "classList";
+	var appendChild = "appendChild";
+	var dataset = "dataset";
+	var containerClass = "iframe-lightbox";
+	var isLoadedClass = "is-loaded";
+	var isOpenedClass = "is-opened";
+	var isShowingClass = "is-showing";
 	var IframeLightbox = function (elem, settings) {
 		var options = settings || {};
 		this.trigger = elem;
 		this.rate = options.rate || 500;
-		this.el = d[gEBCN](containerClass)[0] || "";
-		this.body = this.el ? this.el[gEBCN]("body")[0] : "";
-		this.content = this.el ? this.el[gEBCN]("content")[0] : "";
-		this.href = elem[dS].src || "";
-		this.paddingBottom = elem[dS].paddingBottom || "";
-
+		this.el = document[getElementsByClassName](containerClass)[0] || "";
+		this.body = this.el ? this.el[getElementsByClassName]("body")[0] : "";
+		this.content = this.el ? this.el[getElementsByClassName]("content")[0] : "";
+		this.href = elem[dataset].src || "";
+		this.paddingBottom = elem[dataset].paddingBottom || "";
 		//Event handlers
 		this.onOpened = options.onOpened;
 		this.onIframeLoaded = options.onIframeLoaded;
+		this.onLoaded = options.onLoaded;
 		this.onCreated = options.onCreated;
 		this.init();
 	};
@@ -70,39 +69,39 @@
 			_this.open();
 		};
 		var debounceHandleOpenIframeLightbox = debounce(handleOpenIframeLightbox, this.rate);
-		this.trigger[aEL]("click", debounceHandleOpenIframeLightbox);
+		this.trigger[addEventListener]("click", debounceHandleOpenIframeLightbox);
 	};
 	IframeLightbox.prototype.create = function () {
 		var _this = this,
-		bd = d[cE]("div");
-		this.el = d[cE]("div");
-		this.content = d[cE]("div");
-		this.body = d[cE]("div");
-		this.el[cL].add(containerClass);
-		bd[cL].add("backdrop");
-		this.content[cL].add("content");
-		this.body[cL].add("body");
-		this.el[aC](bd);
-		this.content[aC](this.body);
-		this.content_holder = d[cE]("div");
-		this.content_holder[cL].add("content-holder");
-		this.content_holder[aC](this.content);
-		this.el[aC](this.content_holder);
-		d.body[aC](this.el);
-		bd[aEL]("click", function () {
+		bd = document[createElement]("div");
+		this.el = document[createElement]("div");
+		this.content = document[createElement]("div");
+		this.body = document[createElement]("div");
+		this.el[classList].add(containerClass);
+		bd[classList].add("backdrop");
+		this.content[classList].add("content");
+		this.body[classList].add("body");
+		this.el[appendChild](bd);
+		this.content[appendChild](this.body);
+		this.contentHolder = document[createElement]("div");
+		this.contentHolder[classList].add("content-holder");
+		this.contentHolder[appendChild](this.content);
+		this.el[appendChild](this.contentHolder);
+		document.body[appendChild](this.el);
+		bd[addEventListener]("click", function () {
 			_this.close();
 		});
-		var clearBody = function (e) {
+		var clearBody = function () {
 			if (_this.isOpen()) {
 				return;
 			}
-			_this.el[cL].remove(isShowingClass);
+			_this.el[classList].remove(isShowingClass);
 			_this.body.innerHTML = "";
 		};
-		this.el[aEL]("transitionend", clearBody, false);
-		this.el[aEL]("webkitTransitionEnd", clearBody, false);
-		this.el[aEL]("mozTransitionEnd", clearBody, false);
-		this.el[aEL]("msTransitionEnd", clearBody, false);
+		this.el[addEventListener]("transitionend", clearBody, false);
+		this.el[addEventListener]("webkitTransitionEnd", clearBody, false);
+		this.el[addEventListener]("mozTransitionEnd", clearBody, false);
+		this.el[addEventListener]("msTransitionEnd", clearBody, false);
 		this.callCallback(this.onCreated, this);
 	};
 	IframeLightbox.prototype.loadIframe = function () {
@@ -110,10 +109,11 @@
 		this.iframeId = containerClass + Date.now();
 		this.body.innerHTML = '<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" scrolling="no" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>';
 		(function (iframeId, body) {
-			d[gEBI](iframeId).onload = function () {
+			document[getElementById](iframeId).onload = function () {
 				this.style.opacity = 1;
-				body[cL].add(isLoadedClass);
+				body[classList].add(isLoadedClass);
 				_this.callCallback(_this.onIframeLoaded, _this);
+				_this.callCallback(_this.onLoaded, _this);
 			};
 		})(this.iframeId, this.body);
 	};
@@ -124,23 +124,23 @@
 		} else {
 			this.content.removeAttribute("style");
 		}
-		this.el[cL].add(isShowingClass);
-		this.el[cL].add(isOpenedClass);
+		this.el[classList].add(isShowingClass);
+		this.el[classList].add(isOpenedClass);
 		this.callCallback(this.onOpened, this);
 	};
 	IframeLightbox.prototype.close = function () {
-		this.el[cL].remove(isOpenedClass);
-		this.body[cL].remove(isLoadedClass);
+		this.el[classList].remove(isOpenedClass);
+		this.body[classList].remove(isLoadedClass);
 	};
 	IframeLightbox.prototype.isOpen = function () {
-		return this.el[cL].contains(isOpenedClass);
+		return this.el[classList].contains(isOpenedClass);
 	};
 	IframeLightbox.prototype.callCallback = function(func, data) {
-		if (typeof func !== 'function') {
+		if (typeof func !== "function") {
 			return;
 		}
 		var caller = func.bind(this);
 		caller(data);
 	};
 	root.IframeLightbox = IframeLightbox;
-})("undefined" !== typeof window ? window : this);
+})("undefined" !== typeof window ? window : this, document);

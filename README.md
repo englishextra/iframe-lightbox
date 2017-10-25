@@ -29,15 +29,15 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 #### jsDelivr
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.1.4/iframe-lightbox.min.js`
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.1.5/iframe-lightbox.min.js`
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.1.4/iframe-lightbox.min.css`
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.1.5/iframe-lightbox.min.css`
 
 #### unpkg
 
-`https://unpkg.com/iframe-lightbox@0.1.4/iframe-lightbox.js`
+`https://unpkg.com/iframe-lightbox@0.1.5/iframe-lightbox.js`
 
-`https://unpkg.com/iframe-lightbox@0.1.4/iframe-lightbox.css`
+`https://unpkg.com/iframe-lightbox@0.1.5/iframe-lightbox.css`
 
 ### Install
 
@@ -117,7 +117,7 @@ SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
  ```javascript
  [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
     el.lightbox = new IframeLightbox(el, {
-        onIframeLoaded: function(iframe) {
+        onLoaded: function(iframe) {
             console.log('hola', iframe);
         },
         onCreated: function(instance) {

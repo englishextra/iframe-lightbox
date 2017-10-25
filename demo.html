@@ -97,7 +97,7 @@ data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
 	<h2>Examples of event handling</h2>
 	<pre>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
    el.lightbox = new IframeLightbox(el, {
-	   onIframeLoaded: function(iframe) {
+	   onLoaded: function(iframe) {
 		   console.log(&quot;hola&quot;, iframe);
 	   },
 	   onCreated: function(instance) {
