@@ -20,9 +20,13 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 ### Features
 
+
 * Nicely fits YouTube / Vimeo / SoundCloud or other URL via iframe
+
 * Customizable aspect ratio via `data-padding-bottom` attribute
-* Debounced launch, default 500ms, custom rate can be set as second parameter
+
+* Debounced launch, default 500ms, custom rate can be set as the second parameter
+
 * Preloading spinner that is unset after onload event succeeds
 
 ### CDN
@@ -57,7 +61,7 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 `data-padding-bottom` is optional, and can be used to change default 16/9 Aspect Ratio to the one of yours with the formula: a percentage value of
 
-```
+```txt
 height/width*100
 ```
 
@@ -68,32 +72,36 @@ So, for YouTube or Vimeo, `data-padding-bottom="56.25%"` would be enough.
 For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 
 ## YouTube
-```
- <a href="javascript:void(0);"
- class="iframe-lightbox-link"
- data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0"
- data-padding-bottom="56.25%">YouTube</a>
+
+```html
+<a href="javascript:void(0);"
+  class="iframe-lightbox-link"
+  data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0"
+  data-padding-bottom="56.25%">YouTube</a>
 ```
 
 ## Vimeo
-```
- <a href="javascript:void(0);"
- class="iframe-lightbox-link"
- data-src="https://player.vimeo.com/video/28629415?autoplay=false"
- data-padding-bottom="56.25%">Vimeo</a>
+
+```html
+<a href="javascript:void(0);"
+  class="iframe-lightbox-link"
+  data-src="https://player.vimeo.com/video/28629415?autoplay=false"
+  data-padding-bottom="56.25%">Vimeo</a>
 ```
 
 ## SoundCloud
-```
- <a href="javascript:void(0);"
- class="iframe-lightbox-link"
- data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
- data-padding-bottom="166px">SoundCloud</a>
+
+```html
+<a href="javascript:void(0);"
+  class="iframe-lightbox-link"
+  data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+  data-padding-bottom="166px">SoundCloud</a>
  ```
 
 ## Initialize
-```
-[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
+
+```javascript
+[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
   el.lightbox = new IframeLightbox(el);
 });
 ```
@@ -103,29 +111,29 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
 
 ```javascript
- [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
-   if (!el.classList.contains("is-binded")) {
-     el.lightbox = new IframeLightbox(el);
-     el.classList.add("is-binded");
-   }
- });
+[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
+  if (!el.classList.contains("is-binded")) {
+    el.lightbox = new IframeLightbox(el);
+    el.classList.add("is-binded");
+  }
+});
  ```
  That way you avoid multiple assignments to a single element.
 
 **Examples of event handling**
 
  ```javascript
- [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
-    el.lightbox = new IframeLightbox(el, {
-        onLoaded: function(iframe) {
-            console.log('hola', iframe);
-        },
-        onCreated: function(instance) {
-            console.log('margo', instance)
-        },
-        onOpened: function(instance) {
-            console.log('blah', instance)
-        }
+[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
+  el.lightbox = new IframeLightbox(el, {
+      onLoaded: function (iframe) {
+        console.log('hola', iframe);
+      },
+      onCreated: function (instance) {
+        console.log('margo', instance)
+      },
+      onOpened: function (instance) {
+        console.log('blah', instance)
+      }
     });
 });
 ```
