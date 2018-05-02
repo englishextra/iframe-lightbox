@@ -103,15 +103,18 @@ data-padding-bottom=&quot;252px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
 	<h2>Examples of event handling</h2>
 	<pre>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
    el.lightbox = new IframeLightbox(el, {
-	   onLoaded: function(iframe) {
-		   console.log(&quot;hola&quot;, iframe);
-	   },
-	   onCreated: function(instance) {
-		   console.log(&quot;margo&quot;, instance)
-	   },
-	   onOpened: function(instance) {
-		   console.log(&quot;blah&quot;, instance)
-	   }
+	   onLoaded: function (iframe) {
+		console.log('hola', iframe);
+      },
+      onCreated: function (instance) {
+        console.log('margo', instance)
+      },
+      onOpened: function (instance) {
+        console.log('blah', instance)
+      },
+      onClosed: function (instance) {
+        console.log('krap', instance)
+      }
    });
 });</pre>
 	<h3><a href="https://github.com/englishextra/iframe-lightbox">GitHub</a></h3>
