@@ -34,6 +34,7 @@
 		this.onIframeLoaded = options.onIframeLoaded;
 		this.onLoaded = options.onLoaded;
 		this.onCreated = options.onCreated;
+		this.onClosed = options.onClosed;
 		this.init();
 	};
 	IframeLightbox.prototype.init = function () {
@@ -42,10 +43,10 @@
 			this.create();
 		}
 		var debounce = function (func, wait) {
-			var timeout;
-			var args;
-			var context;
-			var timestamp;
+			var timeout,
+			args,
+			context,
+			timestamp;
 			return function () {
 				context = this;
 				args = [].slice.call(arguments, 0);
@@ -131,6 +132,7 @@
 	IframeLightbox.prototype.close = function () {
 		this.el[classList].remove(isOpenedClass);
 		this.body[classList].remove(isLoadedClass);
+		this.callCallback(this.onClosed, this);
 	};
 	IframeLightbox.prototype.isOpen = function () {
 		return this.el[classList].contains(isOpenedClass);

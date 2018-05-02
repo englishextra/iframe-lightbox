@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 0.1.7 - 2018-05-02
+### Changed
+- Added onClosed callback option
+
 ## 0.1.6 - 2017-10-25
 ### Changed
 - Updated the forgotten minified file `iframe-lightbox.min.js`
