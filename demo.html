@@ -66,6 +66,7 @@
 	<p>For instance, HD would be: 9 / 16 * 100 + &quot;%&quot;</p>
 	<p>So, for YouTube or Vimeo, <code>data-padding-bottom=&quot;56.25%&quot;</code> would be enough.</p>
 	<p>For SoundCloud embedded player via iframe, use: <code>data-padding-bottom=&quot;166px&quot;</code></p>
+	<p>For Audiomack embedded player via iframe, use: <code>data-padding-bottom=&quot;252px&quot;</code></p>
 	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" data-padding-bottom="56.25%">YouTube</a></h2>
 	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
 class=&quot;iframe-lightbox-link&quot;
@@ -81,6 +82,11 @@ data-padding-bottom=&quot;56.25%&quot;&gt;Vimeo&lt;/a&gt;</code></pre>
 class=&quot;iframe-lightbox-link&quot;
 data-src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true&quot;
 data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
+	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit" data-padding-bottom="252px">Audiomack</a></h2>
+	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
+class=&quot;iframe-lightbox-link&quot;
+data-src=&quot;https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit&quot;
+data-padding-bottom=&quot;252px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
 	<h2>Initialize</h2>
 	<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
 	el.lightbox = new IframeLightbox(el);

@@ -70,6 +70,8 @@ So, for YouTube or Vimeo, `data-padding-bottom="56.25%"` would be enough.
 
 For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 
+For Audiomack embedded player via iframe, use: `data-padding-bottom="252px"`
+
 ## YouTube
 
 ```html
@@ -95,6 +97,15 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
   class="iframe-lightbox-link"
   data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
   data-padding-bottom="166px">SoundCloud</a>
+ ```
+
+## Audiomack
+
+```html
+<a href="javascript:void(0);"
+  class="iframe-lightbox-link"
+  data-src="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit"
+  data-padding-bottom="252px">Audiomack</a>
  ```
 
 ## Initialize
