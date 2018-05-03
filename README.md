@@ -1,4 +1,4 @@
-# Iframe-Lightbox Demo
+# iframe-lightbox Demo
 
 Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 5kb unminified source code, with demo
 
@@ -158,4 +158,4 @@ Inspired by [squeral/lightbox](https://github.com/squeral/lightbox)
 
 ## License
 
-Available under MIT License
+Available under [MIT license](https://opensource.org/licenses/MIT).
