@@ -2,13 +2,12 @@
 
 Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 5kb unminified source code, with demo
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/369642c14d3344bebe134c76f0f5dde8)](https://www.codacy.com/app/englishextra/iframe-lightbox?utm_source=github.com&utm_medium=referral&utm_content=englishextra/iframe-lightbox&utm_campaign=badger)
 [![NPM](https://nodei.co/npm/iframe-lightbox.png?downloads=true)](https://nodei.co/npm/iframe-lightbox/)
 
 [![npm](https://img.shields.io/npm/v/iframe-lightbox.svg)](https://github.com/englishextra/iframe-lightbox)
 [![Bower](https://img.shields.io/bower/v/iframe-lightbox.svg)](https://github.com/englishextra/iframe-lightbox)
 [![Build Status](https://travis-ci.org/englishextra/iframe-lightbox.svg?branch=master)](https://travis-ci.org/englishextra/iframe-lightbox)
-[![bitHound Overall Score](https://www.bithound.io/github/englishextra/iframe-lightbox/badges/score.svg)](https://www.bithound.io/github/englishextra/iframe-lightbox)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/369642c14d3344bebe134c76f0f5dde8)](https://www.codacy.com/app/englishextra/iframe-lightbox?utm_source=github.com&utm_medium=referral&utm_content=englishextra/iframe-lightbox&utm_campaign=badger)
 
 ### Demo
 
@@ -130,7 +129,7 @@ SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
  ```
  That way you avoid multiple assignments to a single element.
 
-**Examples of event handling**
+## Examples of event handling
 
  ```javascript
 [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
@@ -151,6 +150,12 @@ SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
 });
 ```
 
-### GitHub
+## GitHub
 
-Inspired by [squeral/lightbox](https://github.com/squeral/lightbox), and available under MIT License
+Inspired by [squeral/lightbox](https://github.com/squeral/lightbox)
+
+[englishextra/img-lightbox](https://github.com/englishextra/img-lightbox)
+
+## License
+
+Available under MIT License

@@ -6,6 +6,7 @@
 	<title>Iframe-Lightbox Demo</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com"><link rel="dns-prefetch" href="https://farm9.staticflickr.com"><link rel="dns-prefetch" href="https://farm8.staticflickr.com"><link rel="dns-prefetch" href="https://farm7.staticflickr.com"><link rel="dns-prefetch" href="https://farm6.staticflickr.com"><link rel="dns-prefetch" href="https://farm5.staticflickr.com"><link rel="dns-prefetch" href="https://farm4.staticflickr.com"><link rel="dns-prefetch" href="https://farm3.staticflickr.com"><link rel="dns-prefetch" href="https://farm2.staticflickr.com"><link rel="dns-prefetch" href="https://farm1.staticflickr.com"><link rel="dns-prefetch" href="https://i.vimeocdn.com" /><link rel="dns-prefetch" href="https://f.vimeocdn.com" /><link rel="dns-prefetch" href="https://w.soundcloud.com" /><link rel="dns-prefetch" href="https://a.disquscdn.com" /><link rel="dns-prefetch" href="https://api-maps.yandex.ru" /><link rel="dns-prefetch" href="https://chart.googleapis.com" /><link rel="dns-prefetch" href="https://connect.mail.ru" /><link rel="dns-prefetch" href="https://connect.ok.ru" /><link rel="dns-prefetch" href="https://disqus.com" /><link rel="dns-prefetch" href="https://graph.facebook.com" /><link rel="dns-prefetch" href="https://mc.yandex.ru" /><link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="dns-prefetch" href="https://yastatic.net" /><link rel="dns-prefetch" href="https://audiomack.com" /><link rel="dns-prefetch" href="https://api.audiomack.com" />
 	<link rel="stylesheet" href="./iframe-lightbox.css">
 </head>
 
@@ -14,13 +15,12 @@
 	<p>Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 5kb unminified source code, with demo</p>
 
 	<p>
-		<a href="https://nodei.co/npm/iframe-lightbox/"><img src="https://camo.githubusercontent.com/4e8d842a445e98d70413ec0cdf2de3c4bbd2964d/68747470733a2f2f6e6f6465692e636f2f6e706d2f696672616d652d6c69676874626f782e706e673f646f776e6c6f6164733d74727565" alt="NPM" data-canonical-src="https://nodei.co/npm/iframe-lightbox.png?downloads=true" style="max-width:100%;"></a>
+		<a href="https://nodei.co/npm/iframe-lightbox/"><img alt="NPM" src="https://nodei.co/npm/iframe-lightbox.png?downloads=true" style="max-width:100%;"></a>
 	</p>
 	<p>
-		<a href="https://github.com/englishextra/iframe-lightbox"><img src="https://camo.githubusercontent.com/05e33067cdf8446de0efaaada0a614c26bfe8f70/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f696672616d652d6c69676874626f782e737667" alt="npm" data-canonical-src="https://img.shields.io/npm/v/iframe-lightbox.svg" style="max-width:100%;"></a>
-		<a href="https://github.com/englishextra/iframe-lightbox"><img src="https://camo.githubusercontent.com/f9b32ca33edab2aa10004a2e164204d030a11375/68747470733a2f2f696d672e736869656c64732e696f2f626f7765722f762f696672616d652d6c69676874626f782e737667" alt="Bower" data-canonical-src="https://img.shields.io/bower/v/iframe-lightbox.svg" style="max-width:100%;"></a>
-		<a href="https://travis-ci.org/englishextra/iframe-lightbox"><img src="https://camo.githubusercontent.com/68c5a2cebe394dc9020950242f0106e9861223c9/68747470733a2f2f7472617669732d63692e6f72672f656e676c69736865787472612f696672616d652d6c69676874626f782e7376673f6272616e63683d6d6173746572" alt="Build Status" data-canonical-src="https://travis-ci.org/englishextra/iframe-lightbox.svg?branch=master" style="max-width:100%;"></a>
-		<a href="https://www.bithound.io/github/englishextra/iframe-lightbox"><img src="https://camo.githubusercontent.com/ef4e8779904740cddf5fa696d274e465d54e7903/68747470733a2f2f7777772e626974686f756e642e696f2f6769746875622f656e676c69736865787472612f696672616d652d6c69676874626f782f6261646765732f73636f72652e737667" alt="bitHound Overall Score" data-canonical-src="https://www.bithound.io/github/englishextra/iframe-lightbox/badges/score.svg" style="max-width:100%;"></a>
+		<a href="https://github.com/englishextra/iframe-lightbox"><img alt="npm" src="https://img.shields.io/npm/v/iframe-lightbox.svg" style="max-width:100%;"></a>
+		<a href="https://github.com/englishextra/iframe-lightbox"><img alt="Bower" src="https://img.shields.io/bower/v/iframe-lightbox.svg" style="max-width:100%;"></a>
+		<a href="https://travis-ci.org/englishextra/iframe-lightbox"><img alt="Build Status" src="https://travis-ci.org/englishextra/iframe-lightbox.svg?branch=master" style="max-width:100%;"></a>
 	</p>
 	<h3>Demo</h3>
 	<p>
@@ -101,7 +101,7 @@ data-padding-bottom=&quot;252px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
 });</code></pre>
 	<p>That way you avoid multiple assignments to a single element.</p>
 	<h2>Examples of event handling</h2>
-	<pre>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
+	<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
    el.lightbox = new IframeLightbox(el, {
 	   onLoaded: function (iframe) {
 		console.log('hola', iframe);
@@ -116,9 +116,12 @@ data-padding-bottom=&quot;252px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
         console.log('krap', instance)
       }
    });
-});</pre>
-	<h3><a href="https://github.com/englishextra/iframe-lightbox">GitHub</a></h3>
-	<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a>, and available under MIT License</p>
+});</code></pre>
+	<h2>GitHub</h2>
+	<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a></p>
+	<p><a href="https://github.com/englishextra/iframe-lightbox">englishextra/iframe-lightbox</a></p>
+	<h2>License</h2>
+	<p>Available under MIT License</p>
 	<script src="./iframe-lightbox.js"></script>
 	<script>
 		[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
