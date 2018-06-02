@@ -94,20 +94,20 @@ data-padding-bottom=&quot;252px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
 	<p>That way you avoid multiple assignments to a single element.</p>
 	<h2>Examples of event handling</h2>
 	<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
-   el.lightbox = new IframeLightbox(el, {
-	   onLoaded: function (iframe) {
+  el.lightbox = new IframeLightbox(el, {
+	  onLoaded: function (iframe) {
 		console.log('hola', iframe);
-      },
-      onCreated: function (instance) {
-        console.log('margo', instance)
-      },
-      onOpened: function (instance) {
-        console.log('blah', instance)
-      },
-      onClosed: function (instance) {
-        console.log('krap', instance)
-      }
-   });
+   },
+   onCreated: function (instance) {
+    console.log('margo', instance)
+   },
+   onOpened: function (instance) {
+    console.log('blah', instance)
+   },
+   onClosed: function (instance) {
+    console.log('krap', instance)
+   }
+  });
 });</code></pre>
 	<h2>GitHub</h2>
 	<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a></p>
