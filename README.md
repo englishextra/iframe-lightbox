@@ -1,6 +1,6 @@
 # iframe-lightbox Demo
 
-Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizeable aspect ratio, 5kb unminified source code, with demo
+Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 5kb unminified source code, with demo
 
 [![NPM](https://nodei.co/npm/iframe-lightbox.png?downloads=true)](https://nodei.co/npm/iframe-lightbox/)
 
@@ -85,7 +85,7 @@ For Audiomack embedded player via iframe, use: `data-padding-bottom="252px"`
 ```html
 <a href="javascript:void(0);"
   class="iframe-lightbox-link"
-  data-src="https://player.vimeo.com/video/28629415?autoplay=false"
+  data-src="https://player.vimeo.com/video/165424115?autoplay=false"
   data-padding-bottom="56.25%">Vimeo</a>
 ```
 
