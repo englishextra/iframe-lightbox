@@ -19,7 +19,7 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 ### Features
 
-* Nicely fits YouTube / Vimeo / SoundCloud or other URL via iframe
+* Nicely fits YouTube / Vimeo / SoundCloud / Audiomack or other URL via iframe
 
 * Customizable aspect ratio via `data-padding-bottom` attribute
 
