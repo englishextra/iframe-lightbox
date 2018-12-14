@@ -20,6 +20,7 @@
 	var isLoadedClass = "is-loaded";
 	var isOpenedClass = "is-opened";
 	var isShowingClass = "is-showing";
+
 	var IframeLightbox = function (elem, settings) {
 		var options = settings || {};
 		this.trigger = elem;
@@ -29,6 +30,7 @@
 		this.content = this.el ? this.el[getElementsByClassName]("content")[0] : "";
 		this.href = elem[dataset].src || "";
 		this.paddingBottom = elem[dataset].paddingBottom || "";
+		this.scrolling = options.scrolling;
 		//Event handlers
 		this.onOpened = options.onOpened;
 		this.onIframeLoaded = options.onIframeLoaded;
@@ -78,19 +80,33 @@
 		this.el = document[createElement]("div");
 		this.content = document[createElement]("div");
 		this.body = document[createElement]("div");
+		this.btnClose = document[createElement]("a");
+		/* jshint -W107 */
+		this.btnClose.setAttribute("href", "javascript:void(0);");
+		/* jshint +W107 */
 		this.el[classList].add(containerClass);
 		bd[classList].add("backdrop");
 		this.content[classList].add("content");
 		this.body[classList].add("body");
+		this.btnClose[classList].add("btn-close");
 		this.el[appendChild](bd);
 		this.content[appendChild](this.body);
 		this.contentHolder = document[createElement]("div");
 		this.contentHolder[classList].add("content-holder");
 		this.contentHolder[appendChild](this.content);
 		this.el[appendChild](this.contentHolder);
+		this.el[appendChild](this.btnClose);
 		document.body[appendChild](this.el);
 		bd[addEventListener]("click", function () {
 			_this.close();
+		});
+		this.btnClose[addEventListener]("click", function () {
+			_this.close();
+		});
+		root[addEventListener]("keyup", function (ev) {
+			if (27 === (ev.which || ev.keyCode)) {
+				_this.close();
+			}
 		});
 		var clearBody = function () {
 			if (_this.isOpen()) {
@@ -108,11 +124,19 @@
 	IframeLightbox.prototype.loadIframe = function () {
 		var _this = this;
 		this.iframeId = containerClass + Date.now();
-		this.body.innerHTML = '<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" scrolling="no" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>';
+		this.body.innerHTML = '<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>';
 		(function (iframeId, body) {
-			document[getElementById](iframeId).onload = function () {
+			var iframe = document[getElementById](iframeId);
+			iframe.onload = function () {
 				this.style.opacity = 1;
 				body[classList].add(isLoadedClass);
+				if (_this.scrolling) {
+					iframe.removeAttribute("scrolling");
+					iframe.style.overflow = "scroll";
+				} else {
+					iframe.setAttribute("scrolling", "no");
+					iframe.style.overflow = "hidden";
+				}
 				_this.callCallback(_this.onIframeLoaded, _this);
 				_this.callCallback(_this.onLoaded, _this);
 			};
