@@ -161,7 +161,7 @@
 	IframeLightbox.prototype.isOpen = function () {
 		return this.el[classList].contains(isOpenedClass);
 	};
-	IframeLightbox.prototype.callCallback = function(func, data) {
+	IframeLightbox.prototype.callCallback = function (func, data) {
 		if (typeof func !== "function") {
 			return;
 		}
