@@ -5,6 +5,7 @@ The project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
 
 ## 0.1.8 - 2018-12-15
 ### Changed
+- Added Close button
 - Closes on ESC
 - Added scrolling option (default: false)
 
