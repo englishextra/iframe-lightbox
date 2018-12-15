@@ -5,15 +5,15 @@ The project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
 
 ## 0.1.9 - 2018-12-15
 ### Changed
-- Freeze body scroling on lightbox open
-- Changed z-index 999
-- close and loading changed from SMIL SVG to base64 for compatibility with IE11 and Edge
+- Freeze body scrolling on lightbox open https://github.com/englishextra/iframe-lightbox/issues/12
+- Changed z-index 999 https://github.com/englishextra/iframe-lightbox/issues/10
+- close and loading with SMIL SVG, and base64 images for compatibility with IE11 and Edge https://github.com/englishextra/iframe-lightbox/issues/13
 
 ## 0.1.8 - 2018-12-15
 ### Changed
-- Added Close button
-- Closes on ESC
-- Added scrolling option (default: false)
+- Added Close button https://github.com/englishextra/iframe-lightbox/issues/8
+- Closes on ESC https://github.com/englishextra/iframe-lightbox/issues/7
+- Added scrolling option (default: false) https://github.com/englishextra/iframe-lightbox/issues/6
 
 ## 0.1.7 - 2018-05-02
 ### Changed

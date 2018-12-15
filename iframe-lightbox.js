@@ -13,6 +13,7 @@
 	var getElementById = "getElementById";
 	var getElementsByClassName = "getElementsByClassName";
 	var createElement = "createElement";
+	var createElementNS = "createElementNS";
 	var classList = "classList";
 	var appendChild = "appendChild";
 	var dataset = "dataset";
@@ -21,6 +22,15 @@
 	var isLoadedClass = "is-loaded";
 	var isOpenedClass = "is-opened";
 	var isShowingClass = "is-showing";
+
+	var docElem = document.documentElement || "";
+
+	var toStringFn = {}.toString;
+	var supportsSvgSmilAnimation = !!document[createElementNS] && (/SVGAnimate/).test(toStringFn.call(document[createElementNS]("http://www.w3.org/2000/svg", "animate"))) || "";
+
+	if (supportsSvgSmilAnimation && docElem) {
+		docElem[classList].add("svganimate");
+	}
 
 	var IframeLightbox = function (elem, settings) {
 		var options = settings || {};

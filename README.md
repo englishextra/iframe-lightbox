@@ -27,6 +27,10 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 * Preloading spinner that is unset after onload event succeeds
 
+* Images inlined in CSS to reduce requests
+
+* SVG images to comply Retina Ready
+
 ### CDN
 
 #### jsDelivr
