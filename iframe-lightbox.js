@@ -16,6 +16,7 @@
 	var classList = "classList";
 	var appendChild = "appendChild";
 	var dataset = "dataset";
+	var iframeLightboxOpenClass = "iframe-lightbox-open";
 	var containerClass = "iframe-lightbox";
 	var isLoadedClass = "is-loaded";
 	var isOpenedClass = "is-opened";
@@ -151,11 +152,13 @@
 		}
 		this.el[classList].add(isShowingClass);
 		this.el[classList].add(isOpenedClass);
+		document.body[classList].add(iframeLightboxOpenClass);
 		this.callCallback(this.onOpened, this);
 	};
 	IframeLightbox.prototype.close = function () {
 		this.el[classList].remove(isOpenedClass);
 		this.body[classList].remove(isLoadedClass);
+		document.body[classList].remove(iframeLightboxOpenClass);
 		this.callCallback(this.onClosed, this);
 	};
 	IframeLightbox.prototype.isOpen = function () {

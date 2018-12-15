@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 0.1.9 - 2018-12-15
+### Changed
+- Freeze body scroling on lightbox open
+- Changed z-index 999
+- close and loading changed from SMIL SVG to base64 for compatibility with IE11 and Edge
+
 ## 0.1.8 - 2018-12-15
 ### Changed
 - Added Close button

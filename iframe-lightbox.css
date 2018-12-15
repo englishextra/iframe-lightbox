@@ -20,7 +20,7 @@
 	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
 	/*!
-	 * https://github.com/englishextra/iframe-lightbox/issues/10
+	 * @see {@link https://github.com/englishextra/iframe-lightbox/issues/10}
 	 */
 	z-index: 999;
 }
@@ -112,4 +112,12 @@
 	background-size: 1.500em 1.500em;
 	background-position: 0 0;
 	/* z-index: 1; */
+}
+
+/*!
+ * @see {@link https://github.com/englishextra/iframe-lightbox/issues/12}
+ */
+
+body.iframe-lightbox-open {
+	overflow: hidden;
 }
