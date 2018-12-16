@@ -27,23 +27,22 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 * Preloading spinner that is unset after onload event succeeds
 
-* Images inlined in CSS to reduce requests
+* Pure CSS Retina Ready UI images, no external ones (prompted by github.com/jasomdotnet, thanks)
 
-* SVG images to comply Retina Ready
 
 ### CDN
 
 #### jsDelivr
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.1.9/iframe-lightbox.min.js`
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.2.0/iframe-lightbox.min.js`
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.1.9/iframe-lightbox.min.css`
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.2.0/iframe-lightbox.min.css`
 
 #### unpkg
 
-`https://unpkg.com/iframe-lightbox@0.1.9/iframe-lightbox.js`
+`https://unpkg.com/iframe-lightbox@0.2.0/iframe-lightbox.js`
 
-`https://unpkg.com/iframe-lightbox@0.1.9/iframe-lightbox.css`
+`https://unpkg.com/iframe-lightbox@0.2.0/iframe-lightbox.css`
 
 ### Install
 

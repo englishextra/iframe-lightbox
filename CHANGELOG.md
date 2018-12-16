@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 0.2.0 - 2018-12-16
+### Changed
+- Changed z-index 999999 to play well with wp-admin https://github.com/englishextra/iframe-lightbox/issues/14
+- Pure CSS Retina Ready UI images, no external ones, removed inlined SVG and base64 images https://github.com/englishextra/iframe-lightbox/issues/13
+
 ## 0.1.9 - 2018-12-15
 ### Changed
 - Freeze body scrolling on lightbox open https://github.com/englishextra/iframe-lightbox/issues/12

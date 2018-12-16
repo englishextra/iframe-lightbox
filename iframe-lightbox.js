@@ -13,7 +13,7 @@
 	var getElementById = "getElementById";
 	var getElementsByClassName = "getElementsByClassName";
 	var createElement = "createElement";
-	var createElementNS = "createElementNS";
+	/* var createElementNS = "createElementNS"; */
 	var classList = "classList";
 	var appendChild = "appendChild";
 	var dataset = "dataset";
@@ -23,14 +23,14 @@
 	var isOpenedClass = "is-opened";
 	var isShowingClass = "is-showing";
 
-	var docElem = document.documentElement || "";
+	/* var docElem = document.documentElement || "";
 
 	var toStringFn = {}.toString;
 	var supportsSvgSmilAnimation = !!document[createElementNS] && (/SVGAnimate/).test(toStringFn.call(document[createElementNS]("http://www.w3.org/2000/svg", "animate"))) || "";
 
 	if (supportsSvgSmilAnimation && docElem) {
 		docElem[classList].add("svganimate");
-	}
+	} */
 
 	var IframeLightbox = function (elem, settings) {
 		var options = settings || {};
@@ -135,7 +135,17 @@
 	IframeLightbox.prototype.loadIframe = function () {
 		var _this = this;
 		this.iframeId = containerClass + Date.now();
-		this.body.innerHTML = '<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>';
+		/*!
+		 * @see {@link https://stackoverflow.com/questions/18648203/how-remove-horizontal-scroll-bar-for-iframe-on-google-chrome}
+		 */
+		var iframeHTML = [];
+		iframeHTML.push('<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>');
+		/*!
+		 * @see {@link https://epic-spinners.epicmax.co/}
+		 */
+		/*iframeHTML.push('<div class="spring-spinner"><div class="spring-spinner-part top"><div class="spring-spinner-rotator"></div></div><div class="spring-spinner-part bottom"><div class="spring-spinner-rotator"></div></div></div>');*/
+		iframeHTML.push('<div class="half-circle-spinner"><div class="circle circle-1"></div><div class="circle circle-2"></div></div>');
+		this.body.innerHTML = iframeHTML.join("");
 		(function (iframeId, body) {
 			var iframe = document[getElementById](iframeId);
 			iframe.onload = function () {
