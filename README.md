@@ -25,7 +25,7 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 * Iframe content can be scrollable or not (default)
 
-* Debounced launch, default 500ms, custom rate can be set as the second parameter
+* Debounced launch, default 500ms, custom rate can be set with rate property of options object
 
 * Preloading spinner that is unset after onload event succeeds
 
