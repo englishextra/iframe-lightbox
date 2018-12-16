@@ -28,8 +28,10 @@
 	<ul>
 		<li>Nicely fits YouTube / Vimeo / SoundCloud / Audiomack or other URL via iframe</li>
 		<li>Customizable aspect ratio via `data-padding-bottom` attribute</li>
+		<li>Iframe content can be scrollable or not (default)</li>
 		<li>Debounced launch, default 500ms, custom rate can be set as the second parameter</li>
 		<li>Preloading spinner that is unset after onload event succeeds</li>
+		<li>Pure CSS Retina Ready UI images, no external ones (prompted by github.com/jasomdotnet, thanks)</li>
 	</ul>
 
 	<h2>CDN</h2>
@@ -58,10 +60,14 @@
 	<p><code>class</code> is not required. They are used here to select elements. You may use some other method for elements selection.</p>
 	<p><code>data-src</code> is required, and contains URL of your content.</p>
 	<p><code>data-padding-bottom</code> is optional, and can be used to change default 16/9 Aspect Ratio to the one of yours with the formula: a percentage value of <code>height/width*100</code>.</p>
+	<p><code>data-scrolling</code> is optional, makes iframe content scrollable or not (default); this can be set with <code>scrolling</code> option property
 	<p>For instance, HD would be: 9 / 16 * 100 + &quot;%&quot;</p>
 	<p>So, for YouTube or Vimeo, <code>data-padding-bottom=&quot;56.25%&quot;</code> would be enough.</p>
 	<p>For SoundCloud embedded player via iframe, use: <code>data-padding-bottom=&quot;166px&quot;</code></p>
 	<p>For Audiomack embedded player via iframe, use: <code>data-padding-bottom=&quot;252px&quot;</code></p>
+
+	<p>For Scrollable content set <code>data-scrolling="true"</code>, or add <code>scrolling</code> option property with <code>true</code></p>
+
 	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" data-padding-bottom="56.25%">YouTube</a></h2>
 	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
 class=&quot;iframe-lightbox-link&quot;
@@ -81,7 +87,14 @@ data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
 	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
 class=&quot;iframe-lightbox-link&quot;
 data-src=&quot;https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit&quot;
-data-padding-bottom=&quot;252px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
+data-padding-bottom=&quot;252px&quot;&gt;Audiomack&lt;/a&gt;</code></pre>
+
+	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://www.w3.org/" data-scrolling="true">Scrollable content</a></h2>
+	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
+class=&quot;iframe-lightbox-link&quot;
+data-src=&quot;https://www.w3.org/&quot;
+data-scrolling=&quot;true&quot;&gt;Scrollable content&lt;/a&gt;</code></pre>
+
 	<h2>Initialize</h2>
 	<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
 	el.lightbox = new IframeLightbox(el);

@@ -40,7 +40,8 @@
 		this.body = this.el ? this.el[getElementsByClassName]("body")[0] : "";
 		this.content = this.el ? this.el[getElementsByClassName]("content")[0] : "";
 		this.href = elem[dataset].src || "";
-		this.paddingBottom = elem[dataset].paddingBottom || "";
+		this.dataPaddingBottom = elem[dataset].paddingBottom || "";
+		this.dataScrolling = elem[dataset].scrolling || "";
 		this.scrolling = options.scrolling;
 		//Event handlers
 		this.onOpened = options.onOpened;
@@ -151,7 +152,7 @@
 			iframe.onload = function () {
 				this.style.opacity = 1;
 				body[classList].add(isLoadedClass);
-				if (_this.scrolling) {
+				if (_this.scrolling || _this.dataScrolling) {
 					iframe.removeAttribute("scrolling");
 					iframe.style.overflow = "scroll";
 				} else {
@@ -165,8 +166,8 @@
 	};
 	IframeLightbox.prototype.open = function () {
 		this.loadIframe();
-		if (this.paddingBottom) {
-			this.content.style.paddingBottom = this.paddingBottom;
+		if (this.dataPaddingBottom) {
+			this.content.style.paddingBottom = this.dataPaddingBottom;
 		} else {
 			this.content.removeAttribute("style");
 		}

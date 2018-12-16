@@ -23,6 +23,8 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 * Customizable aspect ratio via `data-padding-bottom` attribute
 
+* Iframe content can be scrollable or not (default)
+
 * Debounced launch, default 500ms, custom rate can be set as the second parameter
 
 * Preloading spinner that is unset after onload event succeeds
@@ -62,6 +64,8 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 `data-padding-bottom` is optional, and can be used to change default 16/9 Aspect Ratio to the one of yours with the formula: a percentage value of
 
+`data-scrolling` is optional, makes iframe content scrollable or not (default); this can be set with `scrolling` option property 
+
 ```txt
 height/width*100
 ```
@@ -73,6 +77,8 @@ So, for YouTube or Vimeo, `data-padding-bottom="56.25%"` would be enough.
 For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 
 For Audiomack embedded player via iframe, use: `data-padding-bottom="252px"`
+
+For Scrollable content set `data-scrolling="true"`, or add `scrolling` option property with `true`
 
 ## YouTube
 
@@ -108,6 +114,15 @@ For Audiomack embedded player via iframe, use: `data-padding-bottom="252px"`
   class="iframe-lightbox-link"
   data-src="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit"
   data-padding-bottom="252px">Audiomack</a>
+ ```
+
+## Scrollable content
+
+```html
+<a href="javascript:void(0);"
+  class="iframe-lightbox-link"
+  data-src="https://www.w3.org/"
+  data-scrolling="true">Scrollable content</a>
  ```
 
 ## Initialize
