@@ -1,6 +1,6 @@
 {
 	"name": "iframe-lightbox",
-	"version": "0.2.0",
+	"version": "0.2.2",
 	"main": "iframe-lightbox.js",
 	"author": "englishextra",
 	"ignore": [".html",
