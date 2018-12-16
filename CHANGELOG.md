@@ -5,7 +5,7 @@ The project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
 
 ## 0.2.1 - 2018-12-16
 ### Changed
-- Added `data-scrolling="true"`, an alternative to existing `scrolling` option property with `true`
+- Added `data-scrolling="true"`, an alternative to existing `scrolling` option property with `true` https://github.com/englishextra/iframe-lightbox/issues/6
 
 ## 0.2.0 - 2018-12-16
 ### Changed
