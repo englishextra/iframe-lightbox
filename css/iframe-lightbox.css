@@ -1,0 +1,189 @@
+/*!
+ * modified Simple lightbox effect in pure JS
+ * @see {@link https://github.com/squeral/lightbox}
+ * @see {@link https://github.com/squeral/lightbox/blob/master/lightbox.js}
+ * passes jshint
+ */
+.iframe-lightbox,
+.iframe-lightbox .backdrop {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.iframe-lightbox {
+	display: none;
+	position: fixed;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+	/*!
+	 * @see {@link https://github.com/englishextra/iframe-lightbox/issues/10}
+	 * @see {@link https://github.com/englishextra/iframe-lightbox/issues/14}
+	 */
+	z-index: 999999;
+}
+
+.iframe-lightbox .backdrop {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.7);
+	cursor: default;
+}
+
+.iframe-lightbox .content-holder {
+	width: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	margin-right: -50%;
+}
+
+.iframe-lightbox .content {
+	height: 0;
+	position: relative;
+	padding-bottom: 56.25%;
+}
+
+.iframe-lightbox .content > .body {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*!
+ * another pure css spinner
+ * @see {@link https://epic-spinners.epicmax.co/}
+ */
+.iframe-lightbox .content > .body .half-circle-spinner,
+.iframe-lightbox .content > .body .half-circle-spinner * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.iframe-lightbox .content > .body .half-circle-spinner {
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	position: relative;
+	margin: 0;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.iframe-lightbox .content > .body .half-circle-spinner .circle {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	border: calc(60px / 10) solid transparent;
+}
+
+.iframe-lightbox .content > .body .half-circle-spinner .circle.circle-1 {
+	border-top-color: #ffffff;
+	-webkit-animation: half-circle-spinner-animation 1s infinite;
+	animation: half-circle-spinner-animation 1s infinite;
+}
+
+.iframe-lightbox .content > .body .half-circle-spinner .circle.circle-2 {
+	border-bottom-color: #ffffff;
+	-webkit-animation: half-circle-spinner-animation 1s infinite alternate;
+	animation: half-circle-spinner-animation 1s infinite alternate;
+}
+
+@-webkit-keyframes half-circle-spinner-animation {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes half-circle-spinner-animation {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.iframe-lightbox .content > .body.is-loaded .half-circle-spinner {
+	display: none;
+}
+
+.iframe-lightbox iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	-webkit-box-shadow: 0.267rem 0.267rem 0.267rem 0 rgba(3, 3, 3, 0.3);
+	box-shadow: 0.267rem 0.267rem 0.267rem 0 rgba(3, 3, 3, 0.3);
+	/*!
+	 * in js: iframe onload="this.style.opacity=1;" style="opacity:0;border:none;"
+	 */
+	/* opacity: 0; */
+	-webkit-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+}
+
+.iframe-lightbox.is-showing {
+	display: block;
+}
+
+.iframe-lightbox.is-opened {
+	opacity: 1;
+}
+
+.iframe-lightbox .btn-close {
+	position: fixed;
+	top: 0.625em;
+	right: 0.625em;
+	width: 1.5em;
+	height: 1.5em;
+}
+
+/*!
+ * pure css version
+ * @see {@link https://codepen.io/brissmyr/pen/egidw}
+ */
+.iframe-lightbox .btn-close:before,
+.iframe-lightbox .btn-close:after {
+	content: " ";
+	width: 0.125em;
+	height: 1.5em;
+	position: absolute;
+	right: 0.625em;
+	background-color: #ffffff;
+}
+
+.iframe-lightbox .btn-close:before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.iframe-lightbox .btn-close:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+/*!
+ * @see {@link https://github.com/englishextra/iframe-lightbox/issues/12}
+ */
+body.iframe-lightbox--open {
+	overflow: hidden;
+}

@@ -23,10 +23,10 @@
 	"vimeo",
 	"soundcloud",
 	"audiomack"],
-	"files": ["iframe-lightbox.js",
-	"iframe-lightbox.css"],
-	"main": "iframe-lightbox.js",
-	"filename": "iframe-lightbox.js",
+	"files": ["js/iframe-lightbox.js",
+	"css/iframe-lightbox.css"],
+	"main": "js/iframe-lightbox.js",
+	"filename": "js/iframe-lightbox.js",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/englishextra/iframe-lightbox.git"
@@ -40,8 +40,26 @@
 		}]
 	},
 	"devDependencies": {
+		"@babel/core": "^7.2.2",
+		"@babel/plugin-transform-arrow-functions": "^7.2.0",
+		"@babel/plugin-transform-async-to-generator": "^7.2.0",
+		"@babel/plugin-transform-object-assign": "^7.2.0",
+		"@babel/preset-env": "^7.2.0",
+		"browser-sync": "^2.26.3",
 		"grunt": "^1.0.1",
 		"grunt-contrib-jshint": "^1.1.0",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-clean-css": "^4.0.0",
+		"gulp-cli": "^2.0.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-prettier": "^2.0.0",
+		"gulp-rename": "^1.4.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-sourcemaps": "^2.6.4",
+		"gulp-strip-debug": "^3.0.0",
+		"gulp-uglify": "^3.0.1",
 		"jshint": "^2.9.4"
 	},
 	"scripts": {

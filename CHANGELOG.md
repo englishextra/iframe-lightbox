@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 0.2.4 - 2018-12-18
+### Changed
+- Reorginized the file tree of the library
+
 ## 0.2.3 - 2018-12-18
 ### Changed
 - Changed `data-src` (which is still supported for compatibility) to `href` as the source for iframe content https://github.com/englishextra/iframe-lightbox/issues/15
