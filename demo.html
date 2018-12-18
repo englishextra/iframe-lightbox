@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -9,42 +10,70 @@
 	<title>iframe-lightbox Demo</title>
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width" />
-	<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" /><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" /><link rel="dns-prefetch" href="https://farm9.staticflickr.com" /><link rel="dns-prefetch" href="https://farm8.staticflickr.com" /><link rel="dns-prefetch" href="https://farm7.staticflickr.com" /><link rel="dns-prefetch" href="https://farm6.staticflickr.com" /><link rel="dns-prefetch" href="https://farm5.staticflickr.com" /><link rel="dns-prefetch" href="https://farm4.staticflickr.com" /><link rel="dns-prefetch" href="https://farm3.staticflickr.com" /><link rel="dns-prefetch" href="https://farm2.staticflickr.com" /><link rel="dns-prefetch" href="https://farm1.staticflickr.com" /><link rel="dns-prefetch" href="https://i.vimeocdn.com" /><link rel="dns-prefetch" href="https://f.vimeocdn.com" /><link rel="dns-prefetch" href="https://w.soundcloud.com" /><link rel="dns-prefetch" href="https://a.disquscdn.com" /><link rel="dns-prefetch" href="https://api-maps.yandex.ru" /><link rel="dns-prefetch" href="https://chart.googleapis.com" /><link rel="dns-prefetch" href="https://connect.mail.ru" /><link rel="dns-prefetch" href="https://connect.ok.ru" /><link rel="dns-prefetch" href="https://disqus.com" /><link rel="dns-prefetch" href="https://graph.facebook.com" /><link rel="dns-prefetch" href="https://mc.yandex.ru" /><link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="dns-prefetch" href="https://yastatic.net" /><link rel="dns-prefetch" href="https://audiomack.com" /><link rel="dns-prefetch" href="https://api.audiomack.com" /><link rel="dns-prefetch" href="https://platform.twitter.com" /><link rel="dns-prefetch" href="https://www.instagram.com" /><link rel="dns-prefetch" href="https://api.audiomack.com" />
+	<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+	<link rel="dns-prefetch" href="https://farm9.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://farm8.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://farm7.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://farm6.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://farm5.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://farm4.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://farm3.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://farm2.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://farm1.staticflickr.com" />
+	<link rel="dns-prefetch" href="https://i.vimeocdn.com" />
+	<link rel="dns-prefetch" href="https://f.vimeocdn.com" />
+	<link rel="dns-prefetch" href="https://w.soundcloud.com" />
+	<link rel="dns-prefetch" href="https://a.disquscdn.com" />
+	<link rel="dns-prefetch" href="https://api-maps.yandex.ru" />
+	<link rel="dns-prefetch" href="https://chart.googleapis.com" />
+	<link rel="dns-prefetch" href="https://connect.mail.ru" />
+	<link rel="dns-prefetch" href="https://connect.ok.ru" />
+	<link rel="dns-prefetch" href="https://disqus.com" />
+	<link rel="dns-prefetch" href="https://graph.facebook.com" />
+	<link rel="dns-prefetch" href="https://mc.yandex.ru" />
+	<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+	<link rel="dns-prefetch" href="https://yastatic.net" />
+	<link rel="dns-prefetch" href="https://audiomack.com" />
+	<link rel="dns-prefetch" href="https://api.audiomack.com" />
+	<link rel="dns-prefetch" href="https://platform.twitter.com" />
+	<link rel="dns-prefetch" href="https://www.instagram.com" />
+	<link rel="dns-prefetch" href="https://api.audiomack.com" />
 	<link rel="stylesheet" href="./iframe-lightbox.css">
 </head>
 
 <body>
 	<h1 class="title">iframe-lightbox Demo</h1>
 	<p>Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 5kb unminified source code, with demo</p>
-
 	<h2>Demo</h2>
 	<p>
 		<a href="https://codepen.io/englishextra/full/jmjayV/">codepen</a>
 		<a href="https://fiddle.jshell.net/englishextra/8pzy6uhr/show/">jsfiddle</a>
 		<a href="https://output.jsbin.com/saqine">jsbin</a>
 	</p>
-
 	<h2>Features</h2>
 	<ul>
+		<li>Simple initialization</li>
 		<li>Nicely fits YouTube / Vimeo / SoundCloud / Audiomack or other URL via iframe</li>
-		<li>Customizable aspect ratio via `data-padding-bottom` attribute</li>
+		<li>Customizable aspect ratio via <code>data-padding-bottom</code> attribute</li>
 		<li>Iframe content can be scrollable or not (default)</li>
-		<li>Debounced launch, default 500ms, custom rate can be set with rate property of options object</li>
+		<li>Debounced launch, default 500ms, custom rate can be set with <code>rate</code> property of options object</li>
 		<li>Preloading spinner that is unset after onload event succeeds</li>
 		<li>Pure CSS Retina Ready UI images, no external ones (prompted by github.com/jasomdotnet, thanks)</li>
+		<li>Custom event callbacks</li>
 	</ul>
-
 	<h2>CDN</h2>
 	<h4>jsDelivr</h4>
 	<p>
 		<code>https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.js</code>
-		<br/>
+		<br />
 		<code>https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.css</code>
 	</p>
 	<h4>unpkg</h4>
 	<p>
 		<code>https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.js</code>
-		<br/>
+		<br />
 		<code>https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.css</code>
 	</p>
 	<h2>Install</h2>
@@ -58,85 +87,99 @@
 	</p>
 	<h2>Setup</h2>
 	<p><code>class</code> is not required. They are used here to select elements. You may use some other method for elements selection.</p>
-	<p><code>data-src</code> is required, and contains URL of your content.</p>
+	<p><code>data-src</code> is deprecated, but supported for compatibility.</p>
+	<p><code>href</code> is required, and contains URL of your content.</p>
 	<p><code>data-padding-bottom</code> is optional, and can be used to change default 16/9 Aspect Ratio to the one of yours with the formula: a percentage value of <code>height/width*100</code>.</p>
 	<p><code>data-scrolling</code> is optional, makes iframe content scrollable or not (default); this can be set with <code>scrolling</code> option property
-	<p>For instance, HD would be: 9 / 16 * 100 + &quot;%&quot;</p>
-	<p>So, for YouTube or Vimeo, <code>data-padding-bottom=&quot;56.25%&quot;</code> would be enough.</p>
-	<p>For SoundCloud embedded player via iframe, use: <code>data-padding-bottom=&quot;166px&quot;</code></p>
-	<p>For Audiomack embedded player via iframe, use: <code>data-padding-bottom=&quot;252px&quot;</code></p>
-
-	<p>For Scrollable content set <code>data-scrolling="true"</code>, or add <code>scrolling</code> option property with <code>true</code></p>
-
-	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" data-padding-bottom="56.25%">YouTube</a></h2>
-	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
+		<p>For instance, HD would be: 9 / 16 * 100 + &quot;%&quot;</p>
+		<p>So, for YouTube or Vimeo, <code>data-padding-bottom=&quot;56.25%&quot;</code> would be enough.</p>
+		<p>For SoundCloud embedded player via iframe, use: <code>data-padding-bottom=&quot;166px&quot;</code></p>
+		<p>For Audiomack embedded player via iframe, use: <code>data-padding-bottom=&quot;252px&quot;</code></p>
+		<p>For Scrollable content set <code>data-scrolling="true"</code>, or add <code>scrolling</code> option property with <code>true</code></p>
+		<h2><a class="iframe-lightbox-link" href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" data-padding-bottom="56.25%" aria-hidden="true" rel="lightbox">YouTube</a></h2>
+		<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
-data-src=&quot;https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0&quot;
+href=&quot;https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0&quot;
 data-padding-bottom=&quot;56.25%&quot;&gt;YouTube&lt;/a&gt;</code></pre>
-	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://player.vimeo.com/video/165424115?autoplay=false" data-padding-bottom="56.25%">Vimeo</a></h2>
-	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
+		<h2><a class="iframe-lightbox-link" href="https://player.vimeo.com/video/165424115?autoplay=false" data-padding-bottom="56.25%" aria-hidden="true" rel="lightbox">Vimeo</a></h2>
+		<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
-data-src=&quot;https://player.vimeo.com/video/165424115?autoplay=false&quot;
+href=&quot;https://player.vimeo.com/video/165424115?autoplay=false&quot;
 data-padding-bottom=&quot;56.25%&quot;&gt;Vimeo&lt;/a&gt;</code></pre>
-	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" data-padding-bottom="166px">SoundCloud</a></h2>
-	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
+		<h2><a class="iframe-lightbox-link" href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" data-padding-bottom="166px">SoundCloud</a></h2>
+		<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
-data-src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true&quot;
+href=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true&quot;
 data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
-	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit" data-padding-bottom="252px">Audiomack</a></h2>
-	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
+		<h2><a class="iframe-lightbox-link" href="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit" data-padding-bottom="252px" aria-hidden="true" rel="lightbox">Audiomack</a></h2>
+		<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
-data-src=&quot;https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit&quot;
+href=&quot;https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit&quot;
 data-padding-bottom=&quot;252px&quot;&gt;Audiomack&lt;/a&gt;</code></pre>
-
-	<h2><a href="javascript:void(0);" class="iframe-lightbox-link" data-src="https://www.w3.org/" data-scrolling="true">Scrollable content</a></h2>
-	<pre><code>&lt;a href=&quot;javascript:void(0);&quot;
+		<h2><a class="iframe-lightbox-link" href="https://www.w3.org/" data-scrolling="true" aria-hidden="true" rel="lightbox">Scrollable content</a></h2>
+		<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
-data-src=&quot;https://www.w3.org/&quot;
+href=&quot;https://www.w3.org/&quot;
 data-scrolling=&quot;true&quot;&gt;Scrollable content&lt;/a&gt;</code></pre>
-
-	<h2>Initialize</h2>
-	<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
+		<h2>Initialize</h2>
+		<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
 	el.lightbox = new IframeLightbox(el);
 });</code></pre>
-	<h2>Tips</h2>
-	<p>SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:</p>
-	<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
-	if (!el.classList.contains("is-binded")) {
-		el.lightbox = new IframeLightbox(el);
-		el.classList.add("is-binded");
-	}
-});</code></pre>
-	<p>That way you avoid multiple assignments to a single element.</p>
-	<h2>Examples of event handling</h2>
-	<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
-  el.lightbox = new IframeLightbox(el, {
-	  onLoaded: function (iframe) {
-		console.log('hola', iframe);
-   },
-   onCreated: function (instance) {
-    console.log('margo', instance)
-   },
-   onOpened: function (instance) {
-    console.log('blah', instance)
-   },
-   onClosed: function (instance) {
-    console.log('krap', instance)
-   },
-   scrolling: true // default: false
-  });
-});</code></pre>
-	<h2>GitHub</h2>
-	<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a></p>
-	<p><a href="https://github.com/englishextra/iframe-lightbox">englishextra/iframe-lightbox</a></p>
-	<h2>License</h2>
-	<p>Available under <a href="https://opensource.org/licenses/MIT">MIT License</a></p>
-	<script src="./iframe-lightbox.js"></script>
-	<script>
-		[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
-			el.lightbox = new IframeLightbox(el);
-		});
-	</script>
+		<h2>Tips</h2>
+		<p>SPA / PWA developers don't need to bother: built-in class is added to a link.</p>
+		<p>That way you avoid multiple assignments to a single element.</p>
+		<h2>Examples of event handling</h2>
+		<pre><code>(function (root, document) {
+	&quot;use strict&quot;;
+	[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function (el) {
+		el.lightbox = new IframeLightbox(el, {
+				onCreated: function () {
+					/* show your preloader */
+				},
+				onLoaded: function () {
+					/* hide your preloader */
+				},
+				onError: function () {
+					/* hide your preloader */
+				},
+				onClosed: function () {
+					/* hide your preloader */
+				},
+				scrolling: false, /* default: false */
+				rate: 500 /* default: 500 */
+			});
+	});
+})(&quot;undefined&quot; !== typeof window ? window : this, document);</code></pre>
+		<h2>GitHub</h2>
+		<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a></p>
+		<p><a href="https://github.com/englishextra/iframe-lightbox">englishextra/iframe-lightbox</a></p>
+		<h2>License</h2>
+		<p>Available under <a href="https://opensource.org/licenses/MIT">MIT License</a></p>
+		<script src="./iframe-lightbox.js"></script>
+		<script>
+		(function(root, document) {
+			"use strict";
+			[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
+				el.lightbox = new IframeLightbox(el, {
+					onCreated: function() {
+						/* show your preloader */
+					},
+					onLoaded: function() {
+						/* hide your preloader */
+					},
+					onError: function() {
+						/* hide your preloader */
+					},
+					onClosed: function() {
+						/* hide your preloader */
+					},
+					scrolling: false, /* default: false */
+					rate: 500 /* default: 500 */
+				});
+			});
+		})("undefined" !== typeof window ? window : this, document);
+
+		</script>
 </body>
 
 </html>

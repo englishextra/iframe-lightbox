@@ -19,32 +19,36 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 ### Features
 
+* Simple initialization
+
 * Nicely fits YouTube / Vimeo / SoundCloud / Audiomack or other URL via iframe
 
 * Customizable aspect ratio via `data-padding-bottom` attribute
 
 * Iframe content can be scrollable or not (default)
 
-* Debounced launch, default 500ms, custom rate can be set with rate property of options object
+* Debounced launch, default 500ms, custom rate can be set with `rate` property of options object
 
 * Preloading spinner that is unset after onload event succeeds
 
 * Pure CSS Retina Ready UI images, no external ones (prompted by github.com/jasomdotnet, thanks)
+
+* Custom event callbacks
 
 
 ### CDN
 
 #### jsDelivr
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.2.2/iframe-lightbox.min.js`
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.js`
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.2.2/iframe-lightbox.min.css`
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@latest/iframe-lightbox.min.css`
 
 #### unpkg
 
-`https://unpkg.com/iframe-lightbox@0.2.2/iframe-lightbox.js`
+`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.js`
 
-`https://unpkg.com/iframe-lightbox@0.2.2/iframe-lightbox.css`
+`https://unpkg.com/iframe-lightbox@latest/iframe-lightbox.css`
 
 ### Install
 
@@ -60,7 +64,9 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 `class` is not required. They are used here to select elements. You may use some other method for elements selection.
 
-`data-src` is required, and contains URL of your content.
+`data-src` is deprecated, but supported for compatibility.
+
+`href `is required, and contains URL of your content.
 
 `data-padding-bottom` is optional, and can be used to change default 16/9 Aspect Ratio to the one of yours with the formula: a percentage value of
 
@@ -83,45 +89,45 @@ For Scrollable content set `data-scrolling="true"`, or add `scrolling` option pr
 ## YouTube
 
 ```html
-<a href="javascript:void(0);"
+<a
   class="iframe-lightbox-link"
-  data-src="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0"
+  href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0"
   data-padding-bottom="56.25%">YouTube</a>
 ```
 
 ## Vimeo
 
 ```html
-<a href="javascript:void(0);"
+<a
   class="iframe-lightbox-link"
-  data-src="https://player.vimeo.com/video/165424115?autoplay=false"
+  href="https://player.vimeo.com/video/165424115?autoplay=false"
   data-padding-bottom="56.25%">Vimeo</a>
 ```
 
 ## SoundCloud
 
 ```html
-<a href="javascript:void(0);"
+<a
   class="iframe-lightbox-link"
-  data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+  href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
   data-padding-bottom="166px">SoundCloud</a>
  ```
 
 ## Audiomack
 
 ```html
-<a href="javascript:void(0);"
+<a
   class="iframe-lightbox-link"
-  data-src="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit"
+  href="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit"
   data-padding-bottom="252px">Audiomack</a>
  ```
 
 ## Scrollable content
 
 ```html
-<a href="javascript:void(0);"
+<a
   class="iframe-lightbox-link"
-  data-src="https://www.w3.org/"
+  href="https://www.w3.org/"
   data-scrolling="true">Scrollable content</a>
  ```
 
@@ -135,38 +141,34 @@ For Scrollable content set `data-scrolling="true"`, or add `scrolling` option pr
 
 ## Tips
 
-SPA / PWA developers can use CSS flag classes when adding event listeners, e.g.:
+SPA / PWA developers don't need to bother: built-in class is added to a link.
 
-```javascript
-[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
-  if (!el.classList.contains("is-binded")) {
-    el.lightbox = new IframeLightbox(el);
-    el.classList.add("is-binded");
-  }
-});
- ```
- That way you avoid multiple assignments to a single element.
+That way you avoid multiple assignments to a single element.
 
 ## Examples of event handling
 
  ```javascript
-[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
-  el.lightbox = new IframeLightbox(el, {
-      onLoaded: function (iframe) {
-        console.log('hola', iframe);
-      },
-      onCreated: function (instance) {
-        console.log('margo', instance)
-      },
-      onOpened: function (instance) {
-        console.log('blah', instance)
-      },
-      onClosed: function (instance) {
-        console.log('krap', instance)
-      },
-      scrolling: true // default: false
-    });
-});
+(function (root, document) {
+	"use strict";
+	[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
+		el.lightbox = new IframeLightbox(el, {
+			onCreated: function () {
+				/* show your preloader */
+			},
+			onLoaded: function () {
+				/* hide your preloader */
+			},
+			onError: function () {
+				/* hide your preloader */
+			},
+			onClosed: function () {
+				/* hide your preloader */
+			},
+			scrolling: false, /* default: false */
+				rate: 500 /* default: 500 */
+			});
+	});
+})("undefined" !== typeof window ? window : this, document);
 ```
 
 ## GitHub

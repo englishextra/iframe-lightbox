@@ -9,41 +9,40 @@
  */
 (function (root, document) {
 	"use strict";
-	var addEventListener = "addEventListener";
+	var docBody = document.body || "";
+	
+	var appendChild = "appendChild";
+	var classList = "classList";
+	var createElement = "createElement";
+	var dataset = "dataset";
+	var getAttribute = "getAttribute";
 	var getElementById = "getElementById";
 	var getElementsByClassName = "getElementsByClassName";
-	var createElement = "createElement";
-	/* var createElementNS = "createElementNS"; */
-	var classList = "classList";
-	var appendChild = "appendChild";
-	var dataset = "dataset";
-	var iframeLightboxOpenClass = "iframe-lightbox-open";
+	var _addEventListener = "addEventListener";
+	
 	var containerClass = "iframe-lightbox";
+	var iframeLightboxOpenClass = "iframe-lightbox--open";
+	var iframeLightboxLinkIsBindedClass = "iframe-lightbox-link--is-binded";
+	
 	var isLoadedClass = "is-loaded";
 	var isOpenedClass = "is-opened";
 	var isShowingClass = "is-showing";
-
-	/* var docElem = document.documentElement || "";
-
-	var toStringFn = {}.toString;
-	var supportsSvgSmilAnimation = !!document[createElementNS] && (/SVGAnimate/).test(toStringFn.call(document[createElementNS]("http://www.w3.org/2000/svg", "animate"))) || "";
-
-	if (supportsSvgSmilAnimation && docElem) {
-		docElem[classList].add("svganimate");
-	} */
-
+	
 	var IframeLightbox = function (elem, settings) {
 		var options = settings || {};
 		this.trigger = elem;
-		this.rate = options.rate || 500;
 		this.el = document[getElementsByClassName](containerClass)[0] || "";
 		this.body = this.el ? this.el[getElementsByClassName]("body")[0] : "";
 		this.content = this.el ? this.el[getElementsByClassName]("content")[0] : "";
-		this.href = elem[dataset].src || "";
+		this.src = elem[dataset].src || "";
+		this.href = elem[getAttribute]("href") || "";
 		this.dataPaddingBottom = elem[dataset].paddingBottom || "";
 		this.dataScrolling = elem[dataset].scrolling || "";
+		this.rate = options.rate || 500;
 		this.scrolling = options.scrolling;
-		//Event handlers
+		/*!
+		 * Event handlers
+		 */
 		this.onOpened = options.onOpened;
 		this.onIframeLoaded = options.onIframeLoaded;
 		this.onLoaded = options.onLoaded;
@@ -79,12 +78,17 @@
 				}
 			};
 		};
-		var handleOpenIframeLightbox = function (e) {
-			e.preventDefault();
+		var logic = function () {
 			_this.open();
 		};
-		var debounceHandleOpenIframeLightbox = debounce(handleOpenIframeLightbox, this.rate);
-		this.trigger[addEventListener]("click", debounceHandleOpenIframeLightbox);
+		if (!this.trigger[classList].contains(iframeLightboxLinkIsBindedClass)) {
+			this.trigger[classList].add(iframeLightboxLinkIsBindedClass);
+			this.trigger[_addEventListener]("click", function (e) {
+				e.stopPropagation();
+				e.preventDefault();
+				debounce(logic, this.rate).call();
+			});
+		}
 	};
 	IframeLightbox.prototype.create = function () {
 		var _this = this,
@@ -92,30 +96,30 @@
 		this.el = document[createElement]("div");
 		this.content = document[createElement]("div");
 		this.body = document[createElement]("div");
-		this.btnClose = document[createElement]("a");
-		/* jshint -W107 */
-		this.btnClose.setAttribute("href", "javascript:void(0);");
-		/* jshint +W107 */
 		this.el[classList].add(containerClass);
 		bd[classList].add("backdrop");
 		this.content[classList].add("content");
 		this.body[classList].add("body");
-		this.btnClose[classList].add("btn-close");
 		this.el[appendChild](bd);
 		this.content[appendChild](this.body);
 		this.contentHolder = document[createElement]("div");
 		this.contentHolder[classList].add("content-holder");
 		this.contentHolder[appendChild](this.content);
 		this.el[appendChild](this.contentHolder);
+		this.btnClose = document[createElement]("a");
+		this.btnClose[classList].add("btn-close");
+		/* jshint -W107 */
+		this.btnClose.setAttribute("href", "javascript:void(0);");
+		/* jshint +W107 */
 		this.el[appendChild](this.btnClose);
-		document.body[appendChild](this.el);
-		bd[addEventListener]("click", function () {
+		docBody[appendChild](this.el);
+		bd[_addEventListener]("click", function () {
 			_this.close();
 		});
-		this.btnClose[addEventListener]("click", function () {
+		this.btnClose[_addEventListener]("click", function () {
 			_this.close();
 		});
-		root[addEventListener]("keyup", function (ev) {
+		root[_addEventListener]("keyup", function (ev) {
 			if (27 === (ev.which || ev.keyCode)) {
 				_this.close();
 			}
@@ -127,20 +131,21 @@
 			_this.el[classList].remove(isShowingClass);
 			_this.body.innerHTML = "";
 		};
-		this.el[addEventListener]("transitionend", clearBody, false);
-		this.el[addEventListener]("webkitTransitionEnd", clearBody, false);
-		this.el[addEventListener]("mozTransitionEnd", clearBody, false);
-		this.el[addEventListener]("msTransitionEnd", clearBody, false);
+		this.el[_addEventListener]("transitionend", clearBody, false);
+		this.el[_addEventListener]("webkitTransitionEnd", clearBody, false);
+		this.el[_addEventListener]("mozTransitionEnd", clearBody, false);
+		this.el[_addEventListener]("msTransitionEnd", clearBody, false);
 		this.callCallback(this.onCreated, this);
 	};
 	IframeLightbox.prototype.loadIframe = function () {
 		var _this = this;
 		this.iframeId = containerClass + Date.now();
+		this.iframeSrc = this.src || this.href || "";
 		/*!
 		 * @see {@link https://stackoverflow.com/questions/18648203/how-remove-horizontal-scroll-bar-for-iframe-on-google-chrome}
 		 */
 		var iframeHTML = [];
-		iframeHTML.push('<iframe src="' + this.href + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>');
+		iframeHTML.push('<iframe src="' + this.iframeSrc + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>');
 		/*!
 		 * @see {@link https://epic-spinners.epicmax.co/}
 		 */
@@ -150,6 +155,7 @@
 		(function (iframeId, body) {
 			var iframe = document[getElementById](iframeId);
 			iframe.onload = function () {
+				/* console.log("loaded iframe:", this.iframeSrc); */
 				this.style.opacity = 1;
 				body[classList].add(isLoadedClass);
 				if (_this.scrolling || _this.dataScrolling) {
@@ -173,13 +179,13 @@
 		}
 		this.el[classList].add(isShowingClass);
 		this.el[classList].add(isOpenedClass);
-		document.body[classList].add(iframeLightboxOpenClass);
+		docBody[classList].add(iframeLightboxOpenClass);
 		this.callCallback(this.onOpened, this);
 	};
 	IframeLightbox.prototype.close = function () {
 		this.el[classList].remove(isOpenedClass);
 		this.body[classList].remove(isLoadedClass);
-		document.body[classList].remove(iframeLightboxOpenClass);
+		docBody[classList].remove(iframeLightboxOpenClass);
 		this.callCallback(this.onClosed, this);
 	};
 	IframeLightbox.prototype.isOpen = function () {
