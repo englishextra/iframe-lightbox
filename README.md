@@ -70,8 +70,6 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 `data-padding-bottom` is optional, and can be used to change default 16/9 Aspect Ratio to the one of yours with the formula: a percentage value of
 
-`data-scrolling` is optional, makes iframe content scrollable or not (default); this can be set with `scrolling` option property 
-
 ```txt
 height/width*100
 ```
@@ -85,6 +83,8 @@ For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
 For Audiomack embedded player via iframe, use: `data-padding-bottom="252px"`
 
 For Scrollable content set `data-scrolling="true"`, or add `scrolling` option property with `true`
+
+`data-scrolling` is optional, makes iframe content scrollable or not (default); this can be set with `scrolling` option property.
 
 ## YouTube
 

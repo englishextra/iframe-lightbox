@@ -90,46 +90,46 @@
 	<p><code>data-src</code> is deprecated, but supported for compatibility.</p>
 	<p><code>href</code> is required, and contains URL of your content.</p>
 	<p><code>data-padding-bottom</code> is optional, and can be used to change default 16/9 Aspect Ratio to the one of yours with the formula: a percentage value of <code>height/width*100</code>.</p>
-	<p><code>data-scrolling</code> is optional, makes iframe content scrollable or not (default); this can be set with <code>scrolling</code> option property
-		<p>For instance, HD would be: 9 / 16 * 100 + &quot;%&quot;</p>
-		<p>So, for YouTube or Vimeo, <code>data-padding-bottom=&quot;56.25%&quot;</code> would be enough.</p>
-		<p>For SoundCloud embedded player via iframe, use: <code>data-padding-bottom=&quot;166px&quot;</code></p>
-		<p>For Audiomack embedded player via iframe, use: <code>data-padding-bottom=&quot;252px&quot;</code></p>
-		<p>For Scrollable content set <code>data-scrolling="true"</code>, or add <code>scrolling</code> option property with <code>true</code></p>
-		<h2><a class="iframe-lightbox-link" href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" data-padding-bottom="56.25%" aria-hidden="true" rel="lightbox">YouTube</a></h2>
-		<pre><code>&lt;a
+	<p>For instance, HD would be: 9 / 16 * 100 + &quot;%&quot;</p>
+	<p>So, for YouTube or Vimeo, <code>data-padding-bottom=&quot;56.25%&quot;</code> would be enough.</p>
+	<p>For SoundCloud embedded player via iframe, use: <code>data-padding-bottom=&quot;166px&quot;</code></p>
+	<p>For Audiomack embedded player via iframe, use: <code>data-padding-bottom=&quot;252px&quot;</code></p>
+	<p>For Scrollable content set <code>data-scrolling="true"</code>, or add <code>scrolling</code> option property with <code>true</code></p>
+	<p><code>data-scrolling</code> is optional, makes iframe content scrollable or not (default); this can be set with <code>scrolling</code> option property.</p>
+	<h2><a class="iframe-lightbox-link" href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0" data-padding-bottom="56.25%" aria-hidden="true" rel="lightbox">YouTube</a></h2>
+	<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
 href=&quot;https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0&quot;
 data-padding-bottom=&quot;56.25%&quot;&gt;YouTube&lt;/a&gt;</code></pre>
-		<h2><a class="iframe-lightbox-link" href="https://player.vimeo.com/video/165424115?autoplay=false" data-padding-bottom="56.25%" aria-hidden="true" rel="lightbox">Vimeo</a></h2>
-		<pre><code>&lt;a
+	<h2><a class="iframe-lightbox-link" href="https://player.vimeo.com/video/165424115?autoplay=false" data-padding-bottom="56.25%" aria-hidden="true" rel="lightbox">Vimeo</a></h2>
+	<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
 href=&quot;https://player.vimeo.com/video/165424115?autoplay=false&quot;
 data-padding-bottom=&quot;56.25%&quot;&gt;Vimeo&lt;/a&gt;</code></pre>
-		<h2><a class="iframe-lightbox-link" href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" data-padding-bottom="166px">SoundCloud</a></h2>
-		<pre><code>&lt;a
+	<h2><a class="iframe-lightbox-link" href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" data-padding-bottom="166px">SoundCloud</a></h2>
+	<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
 href=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true&quot;
 data-padding-bottom=&quot;166px&quot;&gt;SoundCloud&lt;/a&gt;</code></pre>
-		<h2><a class="iframe-lightbox-link" href="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit" data-padding-bottom="252px" aria-hidden="true" rel="lightbox">Audiomack</a></h2>
-		<pre><code>&lt;a
+	<h2><a class="iframe-lightbox-link" href="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit" data-padding-bottom="252px" aria-hidden="true" rel="lightbox">Audiomack</a></h2>
+	<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
 href=&quot;https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit&quot;
 data-padding-bottom=&quot;252px&quot;&gt;Audiomack&lt;/a&gt;</code></pre>
-		<h2><a class="iframe-lightbox-link" href="https://www.w3.org/" data-scrolling="true" aria-hidden="true" rel="lightbox">Scrollable content</a></h2>
-		<pre><code>&lt;a
+	<h2><a class="iframe-lightbox-link" href="https://www.w3.org/" data-scrolling="true" aria-hidden="true" rel="lightbox">Scrollable content</a></h2>
+	<pre><code>&lt;a
 class=&quot;iframe-lightbox-link&quot;
 href=&quot;https://www.w3.org/&quot;
 data-scrolling=&quot;true&quot;&gt;Scrollable content&lt;/a&gt;</code></pre>
-		<h2>Initialize</h2>
-		<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
+	<h2>Initialize</h2>
+	<pre><code>[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function(el) {
 	el.lightbox = new IframeLightbox(el);
 });</code></pre>
-		<h2>Tips</h2>
-		<p>SPA / PWA developers don't need to bother: built-in class is added to a link.</p>
-		<p>That way you avoid multiple assignments to a single element.</p>
-		<h2>Examples of event handling</h2>
-		<pre><code>(function (root, document) {
+	<h2>Tips</h2>
+	<p>SPA / PWA developers don't need to bother: built-in class is added to a link.</p>
+	<p>That way you avoid multiple assignments to a single element.</p>
+	<h2>Examples of event handling</h2>
+	<pre><code>(function (root, document) {
 	&quot;use strict&quot;;
 	[].forEach.call(document.getElementsByClassName(&quot;iframe-lightbox-link&quot;), function (el) {
 		el.lightbox = new IframeLightbox(el, {
@@ -150,36 +150,37 @@ data-scrolling=&quot;true&quot;&gt;Scrollable content&lt;/a&gt;</code></pre>
 			});
 	});
 })(&quot;undefined&quot; !== typeof window ? window : this, document);</code></pre>
-		<h2>GitHub</h2>
-		<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a></p>
-		<p><a href="https://github.com/englishextra/iframe-lightbox">englishextra/iframe-lightbox</a></p>
-		<h2>License</h2>
-		<p>Available under <a href="https://opensource.org/licenses/MIT">MIT License</a></p>
-		<script src="./iframe-lightbox.js"></script>
-		<script>
-		(function(root, document) {
-			"use strict";
-			[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
-				el.lightbox = new IframeLightbox(el, {
-					onCreated: function() {
-						/* show your preloader */
-					},
-					onLoaded: function() {
-						/* hide your preloader */
-					},
-					onError: function() {
-						/* hide your preloader */
-					},
-					onClosed: function() {
-						/* hide your preloader */
-					},
-					scrolling: false, /* default: false */
-					rate: 500 /* default: 500 */
-				});
+	<h2>GitHub</h2>
+	<p>Inspired by <a href="https://github.com/squeral/lightbox">squeral/lightbox</a></p>
+	<p><a href="https://github.com/englishextra/iframe-lightbox">englishextra/iframe-lightbox</a></p>
+	<h2>License</h2>
+	<p>Available under <a href="https://opensource.org/licenses/MIT">MIT License</a></p>
+	<script src="./iframe-lightbox.js"></script>
+	<script>
+	(function(root, document) {
+		"use strict";
+		[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
+			el.lightbox = new IframeLightbox(el, {
+				onCreated: function() {
+					/* show your preloader */
+				},
+				onLoaded: function() {
+					/* hide your preloader */
+				},
+				onError: function() {
+					/* hide your preloader */
+				},
+				onClosed: function() {
+					/* hide your preloader */
+				},
+				scrolling: false,
+				/* default: false */
+				rate: 500 /* default: 500 */
 			});
-		})("undefined" !== typeof window ? window : this, document);
+		});
+	})("undefined" !== typeof window ? window : this, document);
 
-		</script>
+	</script>
 </body>
 
 </html>
