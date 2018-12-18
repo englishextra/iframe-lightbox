@@ -1,6 +1,6 @@
 {
 	"name": "iframe-lightbox",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 4 kb unminified source code, with demo",
 	"keywords": ["lightbox",
 	"vanilla-javascript",
