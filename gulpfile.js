@@ -150,7 +150,7 @@ gulp.task("compile-css", function () {
 	.pipe(rename(function (path) {
 			path.basename += ".min";
 		}))
-	/* .pipe(minifyCss()) */
+	.pipe(minifyCss())
 	.pipe(sourcemaps.write("."))
 	.pipe(gulp.dest(options.libPaths.css))
 	.pipe(reload({
