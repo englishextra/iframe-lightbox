@@ -1,10 +1,11 @@
 /*!
+ * @see {@link https://github.com/englishextra/iframe-lightbox}
  * modified Simple lightbox effect in pure JS
  * @see {@link https://github.com/squeral/lightbox}
  * @see {@link https://github.com/squeral/lightbox/blob/master/lightbox.js}
  * @params {Object} elem Node element
- * @params {Object} [rate] debounce rate, default 500ms
- * new IframeLightbox(elem)
+ * @params {Object} settings object
+ * el.lightbox = new IframeLightbox(elem, settings)
  * passes jshint
  */
 
@@ -42,10 +43,6 @@
 		this.dataScrolling = elem[dataset].scrolling || "";
 		this.rate = options.rate || 500;
 		this.scrolling = options.scrolling;
-		/*!
-		 * Event handlers
-		 */
-
 		this.onOpened = options.onOpened;
 		this.onIframeLoaded = options.onIframeLoaded;
 		this.onLoaded = options.onLoaded;
@@ -121,11 +118,7 @@
 		this.el[appendChild](this.contentHolder);
 		this.btnClose = document[createElement]("a");
 		this.btnClose[classList].add("btn-close");
-		/* jshint -W107 */
-
 		this.btnClose.setAttribute("href", "javascript:void(0);");
-		/* jshint +W107 */
-
 		this.el[appendChild](this.btnClose);
 		docBody[appendChild](this.el);
 
@@ -169,10 +162,6 @@
 
 		this.iframeId = containerClass + Date.now();
 		this.iframeSrc = this.src || this.href || "";
-		/*!
-		 * @see {@link https://stackoverflow.com/questions/18648203/how-remove-horizontal-scroll-bar-for-iframe-on-google-chrome}
-		 */
-
 		var html = [];
 		html.push(
 			'<iframe src="' +
@@ -183,12 +172,6 @@
 				this.iframeId +
 				'" onload="this.style.opacity=1;" style="opacity:0;border:none;" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>'
 		);
-		/*!
-		 * @see {@link https://epic-spinners.epicmax.co/}
-		 */
-
-		/*html.push('<div class="spring-spinner"><div class="spring-spinner-part top"><div class="spring-spinner-rotator"></div></div><div class="spring-spinner-part bottom"><div class="spring-spinner-rotator"></div></div></div>');*/
-
 		html.push(
 			'<div class="half-circle-spinner"><div class="circle circle-1"></div><div class="circle circle-2"></div></div>'
 		);
@@ -198,7 +181,6 @@
 			var iframe = document[getElementById](iframeId);
 
 			iframe.onload = function() {
-				/* console.log("loaded iframe:", this.iframeSrc); */
 				this.style.opacity = 1;
 				body[classList].add(isLoadedClass);
 
