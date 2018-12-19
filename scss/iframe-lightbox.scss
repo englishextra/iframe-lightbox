@@ -17,7 +17,6 @@
 	display: none;
 	position: fixed;
 	opacity: 0;
-	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
 	/*!
 	 * @see {@link https://github.com/englishextra/iframe-lightbox/issues/10}
@@ -37,7 +36,6 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	margin-right: -50%;
 }
@@ -63,7 +61,6 @@
 
 .iframe-lightbox .content>.body .half-circle-spinner,
 .iframe-lightbox .content>.body .half-circle-spinner * {
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -78,8 +75,6 @@
 	top: 50%;
 	left: 50%;
 	margin-right: -50%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
 
@@ -94,36 +89,20 @@
 
 .iframe-lightbox .content>.body .half-circle-spinner .circle.circle-1 {
 	border-top-color: #FFFFFF;
-	-webkit-animation: half-circle-spinner-animation 1s infinite;
 	animation: half-circle-spinner-animation 1s infinite;
 }
 
 .iframe-lightbox .content>.body .half-circle-spinner .circle.circle-2 {
 	border-bottom-color: #FFFFFF;
-	-webkit-animation: half-circle-spinner-animation 1s infinite alternate;
 	animation: half-circle-spinner-animation 1s infinite alternate;
-}
-
-@-webkit-keyframes half-circle-spinner-animation {
-	0% {
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
-
-	100% {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
 }
 
 @keyframes half-circle-spinner-animation {
 	0% {
-		-webkit-transform: rotate(0deg);
 		transform: rotate(0deg);
 	}
 
 	100% {
-		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
@@ -142,7 +121,6 @@
 	 * in js: iframe onload="this.style.opacity=1;" style="opacity:0;border:none;"
 	 */
 	/* opacity: 0; */
-	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
 }
 
@@ -178,12 +156,10 @@
 }
 
 .iframe-lightbox .btn-close:before {
-	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 
 .iframe-lightbox .btn-close:after {
-	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
 

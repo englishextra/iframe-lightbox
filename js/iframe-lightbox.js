@@ -7,6 +7,8 @@
  * new IframeLightbox(elem)
  * passes jshint
  */
+
+/*jshint -W014 */
 (function(root, document) {
 	"use strict";
 
@@ -171,8 +173,8 @@
 		 * @see {@link https://stackoverflow.com/questions/18648203/how-remove-horizontal-scroll-bar-for-iframe-on-google-chrome}
 		 */
 
-		var iframeHTML = [];
-		iframeHTML.push(
+		var html = [];
+		html.push(
 			'<iframe src="' +
 				this.iframeSrc +
 				'" name="' +
@@ -185,12 +187,12 @@
 		 * @see {@link https://epic-spinners.epicmax.co/}
 		 */
 
-		/*iframeHTML.push('<div class="spring-spinner"><div class="spring-spinner-part top"><div class="spring-spinner-rotator"></div></div><div class="spring-spinner-part bottom"><div class="spring-spinner-rotator"></div></div></div>');*/
+		/*html.push('<div class="spring-spinner"><div class="spring-spinner-part top"><div class="spring-spinner-rotator"></div></div><div class="spring-spinner-part bottom"><div class="spring-spinner-rotator"></div></div></div>');*/
 
-		iframeHTML.push(
+		html.push(
 			'<div class="half-circle-spinner"><div class="circle circle-1"></div><div class="circle circle-2"></div></div>'
 		);
-		this.body.innerHTML = iframeHTML.join("");
+		this.body.innerHTML = html.join("");
 
 		(function(iframeId, body) {
 			var iframe = document[getElementById](iframeId);
