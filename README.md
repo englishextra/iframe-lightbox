@@ -148,25 +148,26 @@ That way you avoid multiple assignments to a single element.
 ## Examples of event handling
 
  ```javascript
-(function (root, document) {
+(function(root, document) {
 	"use strict";
-	[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
+	[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {
 		el.lightbox = new IframeLightbox(el, {
-			onCreated: function () {
+			onCreated: function() {
 				/* show your preloader */
 			},
-			onLoaded: function () {
+			onLoaded: function() {
 				/* hide your preloader */
 			},
-			onError: function () {
+			onError: function() {
 				/* hide your preloader */
 			},
-			onClosed: function () {
+			onClosed: function() {
 				/* hide your preloader */
 			},
-			scrolling: false, /* default: false */
-				rate: 500 /* default: 500 */
-			});
+			scrolling: false,
+			/* default: false */
+			rate: 500 /* default: 500 */
+		});
 	});
 })("undefined" !== typeof window ? window : this, document);
 ```
