@@ -19,6 +19,8 @@
 	var getAttribute = "getAttribute";
 	var getElementById = "getElementById";
 	var getElementsByClassName = "getElementsByClassName";
+	var innerHTML = "innerHTML";
+	var setAttribute = "setAttribute";
 	var _addEventListener = "addEventListener";
 	var containerClass = "iframe-lightbox";
 	var iframeLightboxOpenClass = "iframe-lightbox--open";
@@ -26,6 +28,10 @@
 	var isLoadedClass = "is-loaded";
 	var isOpenedClass = "is-opened";
 	var isShowingClass = "is-showing";
+
+	var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo)/i);
+	var isTouch = isMobile !== null || document.createTouch !== undefined || "ontouchstart" in root || "onmsgesturechange" in root || navigator.msMaxTouchPoints;
+
 	var IframeLightbox = function (elem, settings) {
 		var options = settings || {};
 		this.trigger = elem;
@@ -76,42 +82,70 @@
 		var logic = function () {
 			_this.open();
 		};
+		var handleIframeLightboxLink = function (e) {
+			e.stopPropagation();
+			e.preventDefault();
+			debounce(logic, this.rate).call();
+		};
 		if (!this.trigger[classList].contains(iframeLightboxLinkIsBindedClass)) {
 			this.trigger[classList].add(iframeLightboxLinkIsBindedClass);
-			this.trigger[_addEventListener]("click", function (e) {
-				e.stopPropagation();
-				e.preventDefault();
-				debounce(logic, this.rate).call();
-			});
+			this.trigger[_addEventListener]("click", handleIframeLightboxLink);
+			if (isTouch) {
+				this.trigger[_addEventListener]("touchstart", handleIframeLightboxLink);
+			}
 		}
 	};
 	IframeLightbox.prototype.create = function () {
 		var _this = this,
-		bd = document[createElement]("div");
+		backdrop = document[createElement]("div");
+		backdrop[classList].add("backdrop");
+
 		this.el = document[createElement]("div");
-		this.content = document[createElement]("div");
-		this.body = document[createElement]("div");
 		this.el[classList].add(containerClass);
-		bd[classList].add("backdrop");
+
+		this.el[appendChild](backdrop);
+
+		this.content = document[createElement]("div");
 		this.content[classList].add("content");
+
+		this.body = document[createElement]("div");
 		this.body[classList].add("body");
-		this.el[appendChild](bd);
+
 		this.content[appendChild](this.body);
+
 		this.contentHolder = document[createElement]("div");
 		this.contentHolder[classList].add("content-holder");
 		this.contentHolder[appendChild](this.content);
+
 		this.el[appendChild](this.contentHolder);
+
 		this.btnClose = document[createElement]("a");
 		this.btnClose[classList].add("btn-close");
-		this.btnClose.setAttribute("href", "javascript:void(0);");
+
+		/* jshint -W107 */
+		this.btnClose[setAttribute]("href", "javascript:void(0);");
+		/* jshint +W107 */
+
 		this.el[appendChild](this.btnClose);
+
 		docBody[appendChild](this.el);
-		bd[_addEventListener]("click", function () {
+
+		backdrop[_addEventListener]("click", function () {
 			_this.close();
 		});
+		if (isTouch) {
+			backdrop[_addEventListener]("touchstart", function () {
+				_this.close();
+			});
+		}
 		this.btnClose[_addEventListener]("click", function () {
 			_this.close();
 		});
+		if (isTouch) {
+			this.btnClose[_addEventListener]("touchstart", function () {
+				_this.close();
+			});
+		}
 		root[_addEventListener]("keyup", function (ev) {
 			if (27 === (ev.which || ev.keyCode)) {
 				_this.close();
@@ -122,7 +156,7 @@
 				return;
 			}
 			_this.el[classList].remove(isShowingClass);
-			_this.body.innerHTML = "";
+			_this.body[innerHTML] = "";
 		};
 		this.el[_addEventListener]("transitionend", clearBody, false);
 		this.el[_addEventListener]("webkitTransitionEnd", clearBody, false);
@@ -137,7 +171,7 @@
 		var html = [];
 		html.push('<iframe src="' + this.iframeSrc + '" name="' + this.iframeId + '" id="' + this.iframeId + '" onload="this.style.opacity=1;" style="opacity:0;border:none;" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true" height="166" frameborder="no"></iframe>');
 		html.push('<div class="half-circle-spinner"><div class="circle circle-1"></div><div class="circle circle-2"></div></div>');
-		this.body.innerHTML = html.join("");
+		this.body[innerHTML] = html.join("");
 		(function (iframeId, body) {
 			var iframe = document[getElementById](iframeId);
 			iframe.onload = function () {
@@ -147,7 +181,7 @@
 					iframe.removeAttribute("scrolling");
 					iframe.style.overflow = "scroll";
 				} else {
-					iframe.setAttribute("scrolling", "no");
+					iframe[setAttribute]("scrolling", "no");
 					iframe.style.overflow = "hidden";
 				}
 				_this.callCallback(_this.onIframeLoaded, _this);
