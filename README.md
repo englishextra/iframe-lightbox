@@ -40,15 +40,15 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 #### jsDelivr
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.2.6/js/iframe-lightbox.min.js`
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.2.7/js/iframe-lightbox.min.js`
 
-`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.2.6/css/iframe-lightbox.min.css`
+`https://cdn.jsdelivr.net/gh/englishextra/iframe-lightbox@0.2.7/css/iframe-lightbox.min.css`
 
 #### unpkg
 
-`https://unpkg.com/iframe-lightbox@0.2.6/js/iframe-lightbox.js`
+`https://unpkg.com/iframe-lightbox@0.2.7/js/iframe-lightbox.js`
 
-`https://unpkg.com/iframe-lightbox@0.2.6/css/iframe-lightbox.css`
+`https://unpkg.com/iframe-lightbox@0.2.7/css/iframe-lightbox.css`
 
 ### Install
 
@@ -166,7 +166,8 @@ That way you avoid multiple assignments to a single element.
 			},
 			scrolling: false,
 			/* default: false */
-			rate: 500 /* default: 500 */
+			rate: 500 /* default: 500 */,
+			touch: false /* default: false - use with care for responsive images in links on vertical mobile screens */
 		});
 	});
 })("undefined" !== typeof window ? window : this, document);

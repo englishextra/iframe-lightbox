@@ -28,10 +28,8 @@
 	var isLoadedClass = "is-loaded";
 	var isOpenedClass = "is-opened";
 	var isShowingClass = "is-showing";
-
 	var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(Android)|(PlayBook)|(BB10)|(BlackBerry)|(Opera Mini)|(IEMobile)|(webOS)|(MeeGo)/i);
 	var isTouch = isMobile !== null || document.createTouch !== undefined || "ontouchstart" in root || "onmsgesturechange" in root || navigator.msMaxTouchPoints;
-
 	var IframeLightbox = function (elem, settings) {
 		var options = settings || {};
 		this.trigger = elem;
@@ -92,7 +90,7 @@
 		if (!this.trigger[classList].contains(iframeLightboxLinkIsBindedClass)) {
 			this.trigger[classList].add(iframeLightboxLinkIsBindedClass);
 			this.trigger[_addEventListener]("click", handleIframeLightboxLink);
-			if (isTouch && (_this.touch || _this.dataTouch )) {
+			if (isTouch && (_this.touch || _this.dataTouch)) {
 				this.trigger[_addEventListener]("touchstart", handleIframeLightboxLink);
 			}
 		}
@@ -101,53 +99,31 @@
 		var _this = this,
 		backdrop = document[createElement]("div");
 		backdrop[classList].add("backdrop");
-
 		this.el = document[createElement]("div");
 		this.el[classList].add(containerClass);
-
 		this.el[appendChild](backdrop);
-
 		this.content = document[createElement]("div");
 		this.content[classList].add("content");
-
 		this.body = document[createElement]("div");
 		this.body[classList].add("body");
-
 		this.content[appendChild](this.body);
-
 		this.contentHolder = document[createElement]("div");
 		this.contentHolder[classList].add("content-holder");
 		this.contentHolder[appendChild](this.content);
-
 		this.el[appendChild](this.contentHolder);
-
 		this.btnClose = document[createElement]("a");
 		this.btnClose[classList].add("btn-close");
-
 		/* jshint -W107 */
 		this.btnClose[setAttribute]("href", "javascript:void(0);");
 		/* jshint +W107 */
-
 		this.el[appendChild](this.btnClose);
-
 		docBody[appendChild](this.el);
-
 		backdrop[_addEventListener]("click", function () {
 			_this.close();
 		});
-		/* if (isTouch) {
-			backdrop[_addEventListener]("touchstart", function () {
-				_this.close();
-			});
-		} */
 		this.btnClose[_addEventListener]("click", function () {
 			_this.close();
 		});
-		/* if (isTouch) {
-			this.btnClose[_addEventListener]("touchstart", function () {
-				_this.close();
-			});
-		} */
 		root[_addEventListener]("keyup", function (ev) {
 			if (27 === (ev.which || ev.keyCode)) {
 				_this.close();

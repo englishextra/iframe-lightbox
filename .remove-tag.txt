@@ -1,2 +1,2 @@
-git tag -d v0.2.6
-git push origin :refs/tags/v0.2.6
+git tag -d v0.2.7
+git push origin :refs/tags/v0.2.7
