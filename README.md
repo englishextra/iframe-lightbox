@@ -88,7 +88,7 @@ For Scrollable content set `data-scrolling="true"`, or add `scrolling` option pr
 
 For those who don't use 3rd-party scripts that interfere with links behaviour and don't force `window.location` they have no need in either `data-touch="true"` or `{touch: true}`.
 
-They care only for `{scrolling: thru}` or `data-scrolling="true"`.
+They care only for `{scrolling: true}` or `data-scrolling="true"`.
 
 When you have scripts that interfere, then to keep lightbox working, use `{touch: true}` or `data-touch="true"`.
 
