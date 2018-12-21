@@ -10,6 +10,13 @@ var gulp = require("gulp");
 var plumber = require("gulp-plumber");
 var sass = require("gulp-sass");
 var minifyCss = require("gulp-clean-css");
+var cleanCssOptions = {
+	level: {
+		1: {
+			specialComments: 0
+		}
+	}
+};
 var uglify = require("gulp-uglify");
 var sourcemaps = require("gulp-sourcemaps");
 var rename = require("gulp-rename");
@@ -150,7 +157,7 @@ gulp.task("compile-css", function () {
 	.pipe(rename(function (path) {
 			path.basename += ".min";
 		}))
-	.pipe(minifyCss())
+	.pipe(minifyCss(cleanCssOptions))
 	.pipe(sourcemaps.write("."))
 	.pipe(gulp.dest(options.libPaths.css))
 	.pipe(reload({

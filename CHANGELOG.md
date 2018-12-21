@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 0.2.6 - 2018-12-20
+### Changed
+- Fixed CSS minification https://github.com/englishextra/iframe-lightbox/issues/17
+
 ## 0.2.5 - 2018-12-20
 ### Changed
 - Added touch events support https://github.com/englishextra/iframe-lightbox/issues/16

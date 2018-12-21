@@ -133,19 +133,19 @@
 		backdrop[_addEventListener]("click", function () {
 			_this.close();
 		});
-		if (isTouch) {
+		/* if (isTouch) {
 			backdrop[_addEventListener]("touchstart", function () {
 				_this.close();
 			});
-		}
+		} */
 		this.btnClose[_addEventListener]("click", function () {
 			_this.close();
 		});
-		if (isTouch) {
+		/* if (isTouch) {
 			this.btnClose[_addEventListener]("touchstart", function () {
 				_this.close();
 			});
-		}
+		} */
 		root[_addEventListener]("keyup", function (ev) {
 			if (27 === (ev.which || ev.keyCode)) {
 				_this.close();
