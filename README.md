@@ -87,8 +87,11 @@ For Scrollable content set `data-scrolling="true"`, or add `scrolling` option pr
 `data-scrolling` is optional, makes iframe content scrollable or not (default); this can be set with `scrolling` option property.
 
 For those who don't use 3rd-party scripts that interfere with links behaviour and don't force `window.location` they have no need in either `data-touch="true"` or `{touch: true}`.
+
 They care only for `{scrolling: thru}` or `data-scrolling="true"`.
+
 When you have scripts that interfere, then to keep lightbox working, use `{touch: true}` or `data-touch="true"`.
+
 `data-src` or `href` doesn't matter, but you shouldn't enable `touch` override if you have a full screen image in a lighbox link and have no other space to scroll down.
 
 ## YouTube
