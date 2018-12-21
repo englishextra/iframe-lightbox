@@ -42,8 +42,10 @@
 		this.href = elem[getAttribute]("href") || "";
 		this.dataPaddingBottom = elem[dataset].paddingBottom || "";
 		this.dataScrolling = elem[dataset].scrolling || "";
+		this.dataTouch = elem[dataset].touch || "";
 		this.rate = options.rate || 500;
 		this.scrolling = options.scrolling;
+		this.touch = options.touch;
 		this.onOpened = options.onOpened;
 		this.onIframeLoaded = options.onIframeLoaded;
 		this.onLoaded = options.onLoaded;
@@ -90,7 +92,7 @@
 		if (!this.trigger[classList].contains(iframeLightboxLinkIsBindedClass)) {
 			this.trigger[classList].add(iframeLightboxLinkIsBindedClass);
 			this.trigger[_addEventListener]("click", handleIframeLightboxLink);
-			if (isTouch) {
+			if (isTouch && (_this.touch || _this.dataTouch )) {
 				this.trigger[_addEventListener]("touchstart", handleIframeLightboxLink);
 			}
 		}
