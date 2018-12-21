@@ -4,6 +4,11 @@
  * @see {@link https://www.webstoemp.com/blog/gulp-setup/}
  * @see {@link https://gulpjs.com/plugins/blackList.json}
  * @see {@link https://hackernoon.com/how-to-automate-all-the-things-with-gulp-b21a3fc96885}
+ * @see {@link https://stackoverflow.com/questions/36897877/gulp-error-the-following-tasks-did-not-complete-did-you-forget-to-signal-async}
+ * @see {@link https://zzz.buzz/2016/11/19/gulp-4-0-upgrade-guide/}
+ * @see {@link https://blog.khophi.co/migrate-gulp-4-complete-example/}
+ * @see {@link https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/}
+ * @see {@link https://codeburst.io/switching-to-gulp-4-0-271ae63530c0}
  */
 
 var gulp = require("gulp");
@@ -127,9 +132,7 @@ var options = {
 /*!
  * @see {@link https://browsersync.io/docs/gulp}
  */
-gulp.task("browser-sync", [
-		/* "bundle-assets" */
-	], function () {
+gulp.task("browser-sync", function () {
 
 	browserSync.init({
 		server: "./"
@@ -137,13 +140,13 @@ gulp.task("browser-sync", [
 
 	gulp.watch("./*.html").on("change", reload);
 	gulp.watch("./css/*.css").on("change", reload);
-	gulp.watch("./scss/*.scss", ["compile-css"]);
+	gulp.watch("./scss/*.scss", gulp.parallel("compile-css")).on("change", reload);
 	gulp.watch("./js/*.js").on("change", reload);
-	gulp.watch("./src/*.js", ["compile-js"]);
+	gulp.watch("./src/*.js", gulp.parallel("compile-js")).on("change", reload);
 });
 
 gulp.task("compile-css", function () {
-	gulp.src(options.libPaths.scss)
+	return gulp.src(options.libPaths.scss)
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
 	.pipe(sass({
@@ -160,13 +163,10 @@ gulp.task("compile-css", function () {
 	.pipe(minifyCss(cleanCssOptions))
 	.pipe(sourcemaps.write("."))
 	.pipe(gulp.dest(options.libPaths.css))
-	.pipe(reload({
-			stream: true
-		}));
 });
 
 gulp.task("compile-js", function () {
-	gulp.src(options.libPaths.src)
+	return gulp.src(options.libPaths.src)
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
 	.pipe(babel(babelOptions))
@@ -181,9 +181,6 @@ gulp.task("compile-js", function () {
 	.pipe(uglify())
 	.pipe(sourcemaps.write("."))
 	.pipe(gulp.dest(options.libPaths.js))
-	.pipe(reload({
-			stream: true
-		}));
 });
 
-gulp.task("default", ["browser-sync"]);
+gulp.task("default", gulp.task("browser-sync"));
