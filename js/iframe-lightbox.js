@@ -13,6 +13,7 @@
 (function(root, document) {
 	"use strict";
 
+	var docElem = document.documentElement || "";
 	var docBody = document.body || "";
 	var appendChild = "appendChild";
 	var classList = "classList";
@@ -236,6 +237,7 @@
 
 		this.el[classList].add(isShowingClass);
 		this.el[classList].add(isOpenedClass);
+		docElem[classList].add(iframeLightboxOpenClass);
 		docBody[classList].add(iframeLightboxOpenClass);
 		this.callCallback(this.onOpened, this);
 	};
@@ -243,6 +245,7 @@
 	IframeLightbox.prototype.close = function() {
 		this.el[classList].remove(isOpenedClass);
 		this.body[classList].remove(isLoadedClass);
+		docElem[classList].remove(iframeLightboxOpenClass);
 		docBody[classList].remove(iframeLightboxOpenClass);
 		this.callCallback(this.onClosed, this);
 	};

@@ -184,6 +184,10 @@
 /*!
  * @see {@link https://github.com/englishextra/iframe-lightbox/issues/12}
  */
-body.iframe-lightbox--open {
+.iframe-lightbox--open {
 	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	-ms-touch-action: auto;
+	touch-action: auto;
+	height: auto;
 }
