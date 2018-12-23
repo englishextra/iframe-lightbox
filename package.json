@@ -36,8 +36,12 @@
 		"target": "git://github.com/englishextra/iframe-lightbox.git",
 		"fileMap": [{
 			"basePath": "",
-			"files": ["qrjs*"]
+			"files": ["js/iframe-lightbox*",
+			"css/iframe-lightbox*"]
 		}]
+	},
+	"dependencies": {
+		"npm": "^4.0.5"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
