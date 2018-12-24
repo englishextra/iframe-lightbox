@@ -50,8 +50,6 @@
 		"@babel/plugin-transform-object-assign": "^7.2.0",
 		"@babel/preset-env": "^7.2.0",
 		"browser-sync": "^2.26.3",
-		"grunt": "^1.0.1",
-		"grunt-contrib-jshint": "^1.1.0",
 		"gulp": "^4.0.0",
 		"gulp-autoprefixer": "^6.0.0",
 		"gulp-babel": "^8.0.0",
@@ -64,8 +62,7 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-sourcemaps": "^2.6.4",
 		"gulp-strip-debug": "^3.0.0",
-		"gulp-uglify": "^3.0.1",
-		"jshint": "^2.9.4"
+		"gulp-uglify": "^3.0.1"
 	},
 	"scripts": {
 		"test": "gulp lint-js"
