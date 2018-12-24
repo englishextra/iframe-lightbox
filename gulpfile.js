@@ -122,8 +122,10 @@ var stripDebug = require("gulp-strip-debug");
 
 var eslint = require("gulp-eslint");
 
+var csslint = require("gulp-csslint");
+
 var options = {
-	libPaths: {
+	libbundle: {
 		src: "./src/*.js",
 		js: "./js",
 		scss: "./scss/*.scss",
@@ -132,7 +134,7 @@ var options = {
 };
 
 gulp.task("compile-css", function () {
-	return gulp.src(options.libPaths.scss)
+	return gulp.src(options.libbundle.scss)
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
 	.pipe(sass({
@@ -142,35 +144,42 @@ gulp.task("compile-css", function () {
 	.pipe(prettier(prettierOptions))
 	/* .pipe(beautify(beautifyOptions)) */
 	.pipe(plumber.stop())
-	.pipe(gulp.dest(options.libPaths.css))
+	.pipe(gulp.dest(options.libbundle.css))
 	.pipe(rename(function (path) {
 			path.basename += ".min";
 		}))
 	.pipe(minifyCss(cleanCssOptions))
 	.pipe(sourcemaps.write("."))
-	.pipe(gulp.dest(options.libPaths.css));
+	.pipe(gulp.dest(options.libbundle.css));
+});
+
+gulp.task("lint-css", function () {
+	return gulp.src(options.libbundle.css)
+	.pipe(csslint())
+	.pipe(csslint.formatter())
+	.pipe(csslint.failFormatter());
 });
 
 gulp.task("compile-js", function () {
-	return gulp.src(options.libPaths.src)
+	return gulp.src(options.libbundle.src)
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
 	.pipe(babel(babelOptions))
 	.pipe(prettier(prettierOptions))
 	/* .pipe(beautify(beautifyOptions)) */
 	.pipe(plumber.stop())
-	.pipe(gulp.dest(options.libPaths.js))
+	.pipe(gulp.dest(options.libbundle.js))
 	.pipe(rename(function (path) {
 			path.basename += ".min";
 		}))
 	.pipe(stripDebug())
 	.pipe(uglify())
 	.pipe(sourcemaps.write("."))
-	.pipe(gulp.dest(options.libPaths.js));
+	.pipe(gulp.dest(options.libbundle.js));
 });
 
 gulp.task("lint-js", function () {
-	return gulp.src(options.libPaths.src)
+	return gulp.src(options.libbundle.src)
 	.pipe(eslint())
 	.pipe(eslint.format())
 	.pipe(eslint.failAfterError());
@@ -180,7 +189,8 @@ gulp.task("lint-js", function () {
  * @see {@link https://browsersync.io/docs/gulp}
  */
 gulp.task("browser-sync", gulp.series(gulp.parallel(
-			"lint-js"), function watchChanges() {
+			"lint-js",
+			"lint-css"), function watchChanges() {
 
 		browserSync.init({
 			server: "./"
