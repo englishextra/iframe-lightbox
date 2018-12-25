@@ -206,7 +206,7 @@ var options = {
 	},
 };
 
-gulp.task("compile-css", function () {
+gulp.task("compile-libbundle-css", function () {
 	return gulp.src(options.libbundle.scss)
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
@@ -233,7 +233,7 @@ gulp.task("lint-libbundle-css", function () {
 	.pipe(csslint.failOnError());
 });
 
-gulp.task("compile-js", function () {
+gulp.task("compile-libbundle-js", function () {
 	return gulp.src(options.libbundle.src)
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
@@ -271,9 +271,9 @@ gulp.task("browser-sync", gulp.series(gulp.parallel(
 
 		gulp.watch("./*.html").on("change", reload);
 		gulp.watch("./css/*.css").on("change", reload);
-		gulp.watch("./scss/*.scss", gulp.parallel("compile-css")).on("change", reload);
+		gulp.watch("./scss/*.scss", gulp.parallel("compile-libbundle-css")).on("change", reload);
 		gulp.watch("./js/*.js").on("change", reload);
-		gulp.watch("./src/*.js", gulp.parallel("compile-js")).on("change", reload);
+		gulp.watch("./src/*.js", gulp.parallel("compile-libbundle-js")).on("change", reload);
 	}));
 
 gulp.task("default", gulp.task("browser-sync"));
