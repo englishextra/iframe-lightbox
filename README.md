@@ -98,52 +98,52 @@ When you have scripts that interfere, then to keep lightbox working, use `{touch
 
 ```html
 <a
-  class="iframe-lightbox-link"
-  href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0"
-  data-padding-bottom="56.25%">YouTube</a>
+	class="iframe-lightbox-link"
+	href="https://www.youtube.com/embed/KK9bwTlAvgo?autoplay=0"
+	data-padding-bottom="56.25%">YouTube</a>
 ```
 
 ## Vimeo
 
 ```html
 <a
-  class="iframe-lightbox-link"
-  href="https://player.vimeo.com/video/165424115?autoplay=false"
-  data-padding-bottom="56.25%">Vimeo</a>
+	class="iframe-lightbox-link"
+	href="https://player.vimeo.com/video/165424115?autoplay=false"
+	data-padding-bottom="56.25%">Vimeo</a>
 ```
 
 ## SoundCloud
 
 ```html
 <a
-  class="iframe-lightbox-link"
-  href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
-  data-padding-bottom="166px">SoundCloud</a>
+	class="iframe-lightbox-link"
+	href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/317031598&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
+	data-padding-bottom="166px">SoundCloud</a>
  ```
 
 ## Audiomack
 
 ```html
 <a
-  class="iframe-lightbox-link"
-  href="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit"
-  data-padding-bottom="252px">Audiomack</a>
+	class="iframe-lightbox-link"
+	href="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit"
+	data-padding-bottom="252px">Audiomack</a>
  ```
 
 ## Scrollable content
 
 ```html
 <a
-  class="iframe-lightbox-link"
-  href="https://www.w3.org/"
-  data-scrolling="true">Scrollable content</a>
+	class="iframe-lightbox-link"
+	href="https://www.w3.org/"
+	data-scrolling="true">Scrollable content</a>
  ```
 
 ## Initialize
 
 ```javascript
 [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
-  el.lightbox = new IframeLightbox(el);
+	el.lightbox = new IframeLightbox(el);
 });
 ```
 
