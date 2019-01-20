@@ -27,6 +27,8 @@
 	"css/iframe-lightbox.css"],
 	"main": "js/iframe-lightbox.js",
 	"filename": "js/iframe-lightbox.js",
+	"main_file": "index.js",
+	"electronVersion": "4.0.0",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/englishextra/iframe-lightbox.git"
@@ -41,7 +43,7 @@
 		}]
 	},
 	"dependencies": {
-		"npm": "^6.5.0"
+		"npm": "^6.6.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
@@ -70,7 +72,6 @@
 	},
 	"email": "englishextra@mail.ru",
 	"url": "https://github.com/englishextra/qrjs/issues",
-	"homepage": "https://github.com/englishextra/iframe-lightbox",
 	"maintainers": {
 		"name": "Serguei Shimansky",
 		"email": "englishextra@mail.ru",
