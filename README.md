@@ -141,7 +141,7 @@ When you have scripts that interfere, then to keep lightbox working, use `{touch
 
 ## Initialize
 
-```javascript
+ ```js
 [].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function (el) {
 	el.lightbox = new IframeLightbox(el);
 });
@@ -155,7 +155,7 @@ That way you avoid multiple assignments to a single element.
 
 ## Examples of event handling
 
- ```javascript
+ ```js
 (function(root, document) {
 	"use strict";
 	[].forEach.call(document.getElementsByClassName("iframe-lightbox-link"), function(el) {

@@ -27,8 +27,10 @@
 	"css/iframe-lightbox.css"],
 	"main": "js/iframe-lightbox.js",
 	"filename": "js/iframe-lightbox.js",
-	"main_file": "index.js",
-	"electronVersion": "4.0.0",
+	"main": "main.js",
+	"window": {
+		"icon": "favicon-32x32.png"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/englishextra/iframe-lightbox.git"
