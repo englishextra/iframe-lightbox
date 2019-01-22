@@ -23,10 +23,6 @@
 	"vimeo",
 	"soundcloud",
 	"audiomack"],
-	"files": ["js/iframe-lightbox.js",
-	"css/iframe-lightbox.css"],
-	"main": "js/iframe-lightbox.js",
-	"filename": "js/iframe-lightbox.js",
 	"main": "main.js",
 	"window": {
 		"icon": "favicon-32x32.png"
@@ -35,6 +31,9 @@
 		"type": "git",
 		"url": "git://github.com/englishextra/iframe-lightbox.git"
 	},
+	"files": ["js/iframe-lightbox.js",
+	"css/iframe-lightbox.css"],
+	"filename": "js/iframe-lightbox.js",
 	"autoupdate": {
 		"source": "git",
 		"target": "git://github.com/englishextra/iframe-lightbox.git",
