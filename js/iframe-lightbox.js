@@ -26,6 +26,7 @@
 	var setAttribute = "setAttribute";
 	var _addEventListener = "addEventListener";
 	var containerClass = "iframe-lightbox";
+	var iframeLightboxWindowIsBindedClass = "iframe-lightbox-window--is-binded";
 	var iframeLightboxOpenClass = "iframe-lightbox--open";
 	var iframeLightboxLinkIsBindedClass = "iframe-lightbox-link--is-binded";
 	var isLoadedClass = "is-loaded";
@@ -72,7 +73,7 @@
 			this.create();
 		}
 
-		var debounce = function (func, wait) {
+		var debounce = function debounce(func, wait) {
 			var timeout, args, context, timestamp;
 			return function() {
 				context = this;
@@ -157,11 +158,15 @@
 			_this.close();
 		});
 
-		root[_addEventListener]("keyup", function(ev) {
-			if (27 === (ev.which || ev.keyCode)) {
-				_this.close();
-			}
-		});
+		if (!docElem[classList].contains(iframeLightboxWindowIsBindedClass)) {
+			docElem[classList].add(iframeLightboxWindowIsBindedClass);
+
+			root[_addEventListener]("keyup", function(ev) {
+				if (27 === (ev.which || ev.keyCode)) {
+					_this.close();
+				}
+			});
+		}
 
 		var clearBody = function clearBody() {
 			if (_this.isOpen()) {
