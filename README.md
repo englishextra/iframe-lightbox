@@ -35,7 +35,6 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 * Custom event callbacks
 
-
 ### CDN
 
 #### jsDelivr
