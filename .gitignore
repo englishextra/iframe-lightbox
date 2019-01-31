@@ -10,3 +10,5 @@ bower_components/
 maps/
 node_modules/
 touch-keyboard-navigation.js
+*.sublime-project
+*.sublime-workspace
