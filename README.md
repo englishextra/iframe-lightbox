@@ -63,7 +63,7 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 `class` is not required. They are used here to select elements. You may use some other method for elements selection.
 
-`data-src` is another method to get the source URL.
+`data-src` is another method to get the source URL when you do not want the link to lead to some real URL.
 
 `href `is required, and contains URL of your content.
 
