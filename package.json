@@ -80,7 +80,7 @@
 		"test": "gulp lint-libbundle-js"
 	},
 	"email": "englishextra@mail.ru",
-	"url": "https://github.com/englishextra/qrjs/issues",
+	"url": "https://github.com/englishextra/iframe-lightbox/issues",
 	"maintainers": {
 		"name": "Serguei Shimansky",
 		"email": "englishextra@mail.ru",
