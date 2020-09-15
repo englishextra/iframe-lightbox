@@ -61,7 +61,7 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 
 ### Setup
 
-`class` is not required. They are used here to select elements. You may use some other method for elements selection.
+`class` is not required. `iframe-lightbox-link` is used here to select elements. You may use some other method for elements selection.
 
 `data-src` is another method to get the source URL when you do not want the link to lead to some real URL.
 
@@ -148,7 +148,7 @@ When you have scripts that interfere, then to keep lightbox working, use `{touch
 
 ## Tips
 
-SPA / PWA developers don't need to bother: built-in class is added to a link.
+SPA / PWA developers don't need to bother: work-related class is added to a link.
 
 That way you avoid multiple assignments to a single element.
 
