@@ -91,7 +91,7 @@ They care only for `{scrolling: true}` or `data-scrolling="true"`.
 
 When you have scripts that interfere, then to keep lightbox working, use `{touch: true}` or `data-touch="true"`.
 
-`data-src` or `href` doesn't matter, but you shouldn't enable `touch` override if you have a full screen image in a lighbox link and have no other space to scroll down.
+`data-src` or `href` doesn't matter, but you shouldn't enable this touch override if you have a full screen image in a lighbox link and have no other space to scroll down.
 
 ## YouTube
 
