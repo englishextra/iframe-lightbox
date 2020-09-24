@@ -116,7 +116,7 @@ When you have scripts that interfere, then to keep lightbox working, use `{touch
 ```html
 <a
 	class="iframe-lightbox-link"
-	href="https://audiomack.com/embed/song/bottomfeedermusic/no-shame-explicit"
+	href="https://audiomack.com/embed/song/lax/go-low"
 	data-padding-bottom="252px">Audiomack</a>
  ```
 
