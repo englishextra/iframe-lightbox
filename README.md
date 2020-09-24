@@ -2,8 +2,6 @@
 
 Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 5kb unminified source code, with demo
 
-[![NPM](https://nodei.co/npm/iframe-lightbox.png?downloads=true)](https://nodei.co/npm/iframe-lightbox/)
-
 [![npm](https://img.shields.io/npm/v/iframe-lightbox.svg)](https://github.com/englishextra/iframe-lightbox)
 [![Build Status](https://travis-ci.com/englishextra/iframe-lightbox.svg?branch=master)](https://travis-ci.com/englishextra/iframe-lightbox)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/369642c14d3344bebe134c76f0f5dde8)](https://www.codacy.com/app/englishextra/iframe-lightbox?utm_source=github.com&utm_medium=referral&utm_content=englishextra/iframe-lightbox&utm_campaign=badger)
