@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<!--
-2. lazyload images
+<!-- 2. lazyload images
 3. remove font face, display block, opacity 1, visibility visible in critical inline css
 4. set font display swap in font face in css -->
 <html class="no-js" lang="ru">
 	<head>
 		<meta charset="utf-8" />
 		<!-- <meta http-equiv="x-ua-compatible" content="ie=edge" /> -->
-		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; frame-src 'self' https:; img-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:" />
-		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; frame-src 'self' https:; img-src 'self' 'unsafe-inline' 'unsafe-eval' https:" />
+		<!-- https://content-security-policy.com/ --><meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; connect-src 'self' 'unsafe-inline' https:; frame-src 'self' https:; media-src 'self' https:; img-src 'self' 'unsafe-inline' https: data:" />
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="MobileOptimized" content="320" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,9 +14,8 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="dns-prefetch" href="https://fonts.googleapis.com" /><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" /><link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" /><link rel="dns-prefetch" href="https://farm9.staticflickr.com" /><link rel="dns-prefetch" href="https://farm8.staticflickr.com" /><link rel="dns-prefetch" href="https://farm7.staticflickr.com" /><link rel="dns-prefetch" href="https://farm6.staticflickr.com" /><link rel="dns-prefetch" href="https://farm5.staticflickr.com" /><link rel="dns-prefetch" href="https://farm4.staticflickr.com" /><link rel="dns-prefetch" href="https://farm3.staticflickr.com" /><link rel="dns-prefetch" href="https://farm2.staticflickr.com" /><link rel="dns-prefetch" href="https://farm1.staticflickr.com" /><link rel="dns-prefetch" href="https://i.vimeocdn.com" /><link rel="dns-prefetch" href="https://f.vimeocdn.com" /><link rel="dns-prefetch" href="https://w.soundcloud.com" /><link rel="dns-prefetch" href="https://a.disquscdn.com" /><link rel="dns-prefetch" href="https://api-maps.yandex.ru" /><link rel="dns-prefetch" href="https://chart.googleapis.com" /><link rel="dns-prefetch" href="https://connect.mail.ru" /><link rel="dns-prefetch" href="https://connect.ok.ru" /><link rel="dns-prefetch" href="https://disqus.com" /><link rel="dns-prefetch" href="https://graph.facebook.com" /><link rel="dns-prefetch" href="https://mc.yandex.ru" /><link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="dns-prefetch" href="https://yastatic.net" /><link rel="dns-prefetch" href="https://audiomack.com" /><link rel="dns-prefetch" href="https://api.audiomack.com" /><link rel="dns-prefetch" href="https://platform.twitter.com" /><link rel="dns-prefetch" href="https://www.instagram.com" />
-		<link rel="stylesheet" href="./css/iframe-lightbox.css">
+		<link rel="stylesheet" href="./css/iframe-lightbox.css" />
 	</head>
-
 	<body>
 		<h1 class="title">iframe-lightbox Demo</h1>
 		<p>Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 5kb unminified source code, with demo</p>
@@ -156,7 +153,6 @@ data-scrolling=&quot;true&quot;&gt;Scrollable content&lt;/a&gt;</code></pre>
 					});
 				});
 			})("undefined" !== typeof window ? window : this, document);
-
 		</script>
 	</body>
 </html>
