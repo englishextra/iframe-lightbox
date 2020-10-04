@@ -18,10 +18,10 @@
 	opacity: 0;
 	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
-	/*!
-	 * @see {@link https://github.com/englishextra/iframe-lightbox/issues/10}
-	 * @see {@link https://github.com/englishextra/iframe-lightbox/issues/14}
-	 */
+/*!
+ * @see {@link https://github.com/englishextra/iframe-lightbox/issues/10}
+ * @see {@link https://github.com/englishextra/iframe-lightbox/issues/14}
+ */
 	z-index: 999999;
 }
 
@@ -133,10 +133,10 @@
 	border: 0;
 	-webkit-box-shadow: 0.267rem 0.267rem 0.267rem 0 rgba(3, 3, 3, 0.3);
 	box-shadow: 0.267rem 0.267rem 0.267rem 0 rgba(3, 3, 3, 0.3);
-	/*!
-	 * in js: iframe onload="this.style.opacity=1;" style="opacity:0;border:none;"
-	 */
-	/* opacity: 0; */
+/*!
+ * in js: iframe onload="this.style.opacity=1;" style="opacity:0;border:none;"
+ */
+/* opacity: 0; */
 	-webkit-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
 }
