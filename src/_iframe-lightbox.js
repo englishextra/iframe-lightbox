@@ -8,8 +8,11 @@
  * el.lightbox = new IframeLightbox(elem, settings)
  * passes jshint
  */
+
 /*jslint browser: true */
+
 /*jslint node: true */
+
 /*jshint -W014 */
 (function (root, document) {
 	"use strict";
