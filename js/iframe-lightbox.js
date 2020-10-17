@@ -131,12 +131,8 @@
 		this.contentHolder.classList.add("content-holder");
 		this.contentHolder.appendChild(this.content);
 		this.el.appendChild(this.contentHolder);
-		this.btnClose = document.createElement("a");
+		this.btnClose = document.createElement("button");
 		this.btnClose.classList.add("btn-close");
-		/* jshint -W107 */
-
-		this.btnClose.setAttribute("href", "javascript:void(0);");
-		/* jshint +W107 */
 
 		this.el.appendChild(this.btnClose);
 		docBody.appendChild(this.el);

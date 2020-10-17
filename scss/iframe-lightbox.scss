@@ -120,6 +120,7 @@
 /*!
  * in js: iframe onload="this.style.opacity=1;" style="opacity:0;border:none;"
  */
+
 /* opacity: 0; */
 	transition: opacity 0.2s ease;
 }
@@ -138,6 +139,11 @@
 	right: 1.000rem;
 	width: 1.500rem;
 	height: 1.500rem;
+	font-size: 1.000rem;
+	outline: none;
+	cursor: pointer;
+	border: 0;
+	background-color: transparent;
 }
 
 /*!
@@ -151,8 +157,9 @@
 	width: 0.125em;
 	height: 1.500em;
 	position: absolute;
-	right: 0.625em;
-	background-color: #FFFFFF;
+	top: 0;
+	right: 0.688em;
+	background-color: #ffffff;
 }
 
 .iframe-lightbox .btn-close:before {
