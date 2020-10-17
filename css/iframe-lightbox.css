@@ -4,6 +4,7 @@
  * @see {@link https://github.com/squeral/lightbox/blob/master/lightbox.js}
  * passes jshint
  */
+
 .iframe-lightbox,
 .iframe-lightbox .backdrop {
 	width: 100%;
@@ -59,6 +60,7 @@
  * another pure css spinner
  * @see {@link https://epic-spinners.epicmax.co/}
  */
+
 .iframe-lightbox .content > .body .half-circle-spinner,
 .iframe-lightbox .content > .body .half-circle-spinner * {
 	-webkit-box-sizing: border-box;
@@ -167,6 +169,7 @@
  * pure css version
  * @see {@link https://codepen.io/brissmyr/pen/egidw}
  */
+
 .iframe-lightbox .btn-close:before,
 .iframe-lightbox .btn-close:after {
 	content: " ";
@@ -191,6 +194,7 @@
 /*!
  * @see {@link https://github.com/englishextra/iframe-lightbox/issues/12}
  */
+
 .iframe-lightbox--open {
 	overflow: hidden;
 	-webkit-overflow-scrolling: touch;
