@@ -153,6 +153,7 @@
 }
 
 .iframe-lightbox .btn-close {
+	display: block;
 	position: fixed;
 	top: 1.000rem;
 	right: 1.000rem;
