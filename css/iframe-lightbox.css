@@ -91,13 +91,13 @@
 }
 
 .iframe-lightbox .content > .body .half-circle-spinner .circle.circle-1 {
-	border-top-color: #ffffff;
+	border-top-color: #FFFFFF;
 	-webkit-animation: half-circle-spinner-animation 1s infinite;
 	animation: half-circle-spinner-animation 1s infinite;
 }
 
 .iframe-lightbox .content > .body .half-circle-spinner .circle.circle-2 {
-	border-bottom-color: #ffffff;
+	border-bottom-color: #FFFFFF;
 	-webkit-animation: half-circle-spinner-animation 1s infinite alternate;
 	animation: half-circle-spinner-animation 1s infinite alternate;
 }
@@ -179,7 +179,7 @@
 	position: absolute;
 	top: 0;
 	right: 0.688em;
-	background-color: #ffffff;
+	background-color: #FFFFFF;
 }
 
 .iframe-lightbox .btn-close:before {
