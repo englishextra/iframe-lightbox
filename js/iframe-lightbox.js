@@ -60,7 +60,7 @@
 		this.init();
 	};
 
-	IframeLightbox.prototype.init = function() {
+	IframeLightbox.prototype.init = function () {
 		var _this = this;
 
 		if (!this.el) {
@@ -114,7 +114,7 @@
 		}
 	};
 
-	IframeLightbox.prototype.create = function() {
+	IframeLightbox.prototype.create = function () {
 		var _this = this,
 			backdrop = document.createElement("div");
 
@@ -136,10 +136,10 @@
 
 		this.el.appendChild(this.btnClose);
 		docBody.appendChild(this.el);
-		backdrop.addEventListener("click", function() {
+		backdrop.addEventListener("click", function () {
 			_this.close();
 		});
-		this.btnClose.addEventListener("click", function() {
+		this.btnClose.addEventListener("click", function () {
 			_this.close();
 		});
 
@@ -169,7 +169,7 @@
 		this.callCallback(this.onCreated, this);
 	};
 
-	IframeLightbox.prototype.loadIframe = function() {
+	IframeLightbox.prototype.loadIframe = function () {
 		var _this = this;
 
 		this.iframeId = containerClass + Date.now();
@@ -192,7 +192,7 @@
 		(function(iframeId, body) {
 			var iframe = document.getElementById(iframeId);
 
-			iframe.onload = function() {
+			iframe.onload = function () {
 				this.style.opacity = 1;
 				body.classList.add(isLoadedClass);
 
@@ -211,7 +211,7 @@
 		})(this.iframeId, this.body);
 	};
 
-	IframeLightbox.prototype.open = function() {
+	IframeLightbox.prototype.open = function () {
 		this.loadIframe();
 
 		if (this.dataPaddingBottom) {
@@ -227,7 +227,7 @@
 		this.callCallback(this.onOpened, this);
 	};
 
-	IframeLightbox.prototype.close = function() {
+	IframeLightbox.prototype.close = function () {
 		this.el.classList.remove(isOpenedClass);
 		this.body.classList.remove(isLoadedClass);
 		docElem.classList.remove(iframeLightboxOpenClass);
@@ -235,11 +235,11 @@
 		this.callCallback(this.onClosed, this);
 	};
 
-	IframeLightbox.prototype.isOpen = function() {
+	IframeLightbox.prototype.isOpen = function () {
 		return this.el.classList.contains(isOpenedClass);
 	};
 
-	IframeLightbox.prototype.callCallback = function(func, data) {
+	IframeLightbox.prototype.callCallback = function (func, data) {
 		if (typeof func !== "function") {
 			return;
 		}
