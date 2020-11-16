@@ -69,7 +69,7 @@
 
 		var debounce = function debounce(func, wait) {
 			var timeout, args, context, timestamp;
-			return function() {
+			return function () {
 				context = this;
 				args = [].slice.call(arguments, 0);
 				timestamp = new Date();
