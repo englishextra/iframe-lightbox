@@ -62,7 +62,7 @@
 				context = this;
 				args = [].slice.call(arguments, 0);
 				timestamp = new Date();
-				var later = function () {
+				var later = function debounced() {
 					var last = (new Date()) - timestamp;
 					if (last < wait) {
 						timeout = setTimeout(later, wait - last);
