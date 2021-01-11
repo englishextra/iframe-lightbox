@@ -6,6 +6,7 @@
 bower_components/
 maps/
 node_modules/
+package-lock.json
 touch-keyboard-navigation.js
 *.sublime-project
 *.sublime-workspace
