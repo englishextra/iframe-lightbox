@@ -1,9 +1,6 @@
 {
 	"name": "iframe-lightbox",
-	"version": "0.2.8",
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
-	},
+	"version": "0.2.9",
 	"description": "Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 5kb unminified source code, with demo",
 	"keywords": [
 		"lightbox",
@@ -37,6 +34,7 @@
 		"url": "git://github.com/englishextra/iframe-lightbox.git"
 	},
 	"files": [
+		"index.html",
 		"js/iframe-lightbox.js",
 		"css/iframe-lightbox.css"
 	],

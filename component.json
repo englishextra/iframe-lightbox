@@ -1,7 +1,7 @@
 {
 	"name": "iframe-lightbox",
 	"repo": "englishextra/iframe-lightbox",
-	"version": "0.2.8",
+	"version": "0.2.9",
 	"scripts": ["iframe-lightbox.js"],
 	"styles": ["iframe-lightbox.css"],
 	"author": "englishextra",
