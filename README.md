@@ -5,7 +5,7 @@ Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customiz
 [![npm](https://img.shields.io/npm/v/iframe-lightbox.svg)](https://www.npmjs.com/package/iframe-lightbox)
 [![Build Status](https://travis-ci.com/englishextra/iframe-lightbox.svg?branch=master)](https://travis-ci.com/englishextra/iframe-lightbox)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/369642c14d3344bebe134c76f0f5dde8)](https://www.codacy.com/manual/englishextra/iframe-lightbox/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=englishextra/iframe-lightbox&amp;utm_campaign=Badge_Grade)
-[![](https://data.jsdelivr.com/v1/package/npm/iframe-lightbox/badge)](https://www.jsdelivr.com/package/npm/iframe-lightbox)
+[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/iframe-lightbox/badge)](https://www.jsdelivr.com/package/npm/iframe-lightbox)
 
 ## Demo
 
