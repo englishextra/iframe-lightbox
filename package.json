@@ -25,14 +25,8 @@
 		"soundcloud",
 		"audiomack"
 	],
-	"main": "main.js",
-	"window": {
-		"icon": "favicon-32x32.png"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/englishextra/iframe-lightbox.git"
-	},
+	"main": "js/iframe-lightbox.js",
+	"style": "css/iframe-lightbox.css",
 	"files": [
 		"index.html",
 		"js/iframe-lightbox.js",
@@ -42,15 +36,17 @@
 	"autoupdate": {
 		"source": "git",
 		"target": "git://github.com/englishextra/iframe-lightbox.git",
-		"fileMap": [
-			{
-				"basePath": "",
-				"files": [
-					"js/iframe-lightbox*",
-					"css/iframe-lightbox*"
-				]
-			}
-		]
+		"fileMap": [{
+			"basePath": "",
+			"files": [
+				"js/iframe-lightbox*",
+				"css/iframe-lightbox*"
+			]
+		}]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/englishextra/iframe-lightbox.git"
 	},
 	"dependencies": {
 		"npm": "^7.3.0"
