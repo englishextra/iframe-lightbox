@@ -55,10 +55,10 @@ height/width*100
 
 For instance, HD would be: 9 / 16 * 100 + "%"
 So, for YouTube or Vimeo, `data-padding-bottom="56.25%"` would be enough.
-For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`
-For Audiomack embedded player via iframe, use: `data-padding-bottom="252px"`
-For Scrollable content set `data-scrolling="true"`, or add `scrolling` option property with `true`
-`data-scrolling` is optional, makes iframe content scrollable or not (default); this can be set with `scrolling` option property.
+For SoundCloud embedded player via iframe, use: `data-padding-bottom="166px"`.
+For Audiomack embedded player via iframe, use: `data-padding-bottom="252px"`.
+For Scrollable content set `data-scrolling="true"`, or add `scrolling` option property with `true`.
+The `data-scrolling` is optional, makes iframe content scrollable or not (default); this can be set with `scrolling` option property.
 For those who don't use 3rd-party scripts that interfere with links behaviour and don't force `window.location` they have no need in either `data-touch="true"` or `{touch: true}`.
 When you have scripts that interfere, then to keep lightbox working, use `{touch: true}` or `data-touch="true"`.
 `data-src` or `href` doesn't matter, but you shouldn't enable this touch override if you have a full screen image in a lighbox link and have no other space to scroll down.
