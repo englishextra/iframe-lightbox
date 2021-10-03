@@ -1,6 +1,6 @@
 {
 	"name": "iframe-lightbox",
-	"version": "0.2.10",
+	"version": "0.2.11",
 	"description": "Responsive no-jQuery pure JS/CSS Lightbox for iframes, no dependencies, customizable aspect ratio, 5kb unminified source code, with demo",
 	"keywords": [
 		"lightbox",
@@ -48,9 +48,7 @@
 		"type": "git",
 		"url": "git://github.com/englishextra/iframe-lightbox.git"
 	},
-	"dependencies": {
-		"npm": "^7.3.0"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"@babel/core": "^7.12.10",
 		"@babel/plugin-transform-arrow-functions": "^7.12.1",
@@ -72,6 +70,9 @@
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-strip-debug": "^3.0.0",
 		"gulp-uglify": "^3.0.2"
+	},
+	"engines": {
+		"npm": "7.x"
 	},
 	"scripts": {
 		"test": "gulp lint-libbundle-js"
